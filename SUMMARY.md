@@ -9,3 +9,5 @@
 * [Get Address Balances On A Given Network](get-address-balances-on-a-given-network.md)
 * [Verify BNS Existence / Get Address BNS List](verify-bns-existence-get-address-bns-list.md)
 * [Verify SNS Existence / Get Address SNS List](verify-sns-existence-get-address-sns-list.md)
+* [Clarity Functions](./reference/functions.md)
+* [Clarity Keywords](./reference/keywords.md)
