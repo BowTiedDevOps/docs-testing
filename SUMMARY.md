@@ -1,4 +1,4 @@
 # Table of contents
 
-* [Clarity Functions](README.md)
-* [Clarity Keywords](keywords.md)
+* [Clarity Functions](reference/functions.md)
+* [Clarity Keywords](reference/keywords.md)
