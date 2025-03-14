@@ -1,20 +1,20 @@
-# Clarity Functions
+# Functions
 
-## \* (multiply)​
+## \* (multiply)
 
 Introduced in: **Clarity 1**
 
-**input:** `int, ... | uint, ...`
+**Input:** `int, ... | uint, ...`
 
-**output:** `int | uint`
+**Output:** `int | uint`
 
-**signature:** `(* i1 i2...)`
+**Signature:** `(* i1 i2...)`
 
-**description:**
+**Description:**
 
 Multiplies a variable number of integer inputs and returns the result. In the event of an _overflow_, throws a runtime error.
 
-**example:**
+**Example:**
 
 ```
 (* 2 3) ;; Returns 6
@@ -22,62 +22,62 @@ Multiplies a variable number of integer inputs and returns the result. In the ev
 (* 2 2 2) ;; Returns 8
 ```
 
-## + (add)​
+## + (add)
 
 Introduced in: **Clarity 1**
 
-**input:** `int, ... | uint, ...`
+**Input:** `int, ... | uint, ...`
 
-**output:** `int | uint`
+**Output:** `int | uint`
 
-**signature:** `(+ i1 i2...)`
+**Signature:** `(+ i1 i2...)`
 
-**description:**
+**Description:**
 
 Adds a variable number of integer inputs and returns the result. In the event of an _overflow_, throws a runtime error.
 
-**example:**
+**Example:**
 
 ```
 (+ 1 2 3) ;; Returns 6
 ```
 
-## - (subtract)​
+## - (subtract)
 
 Introduced in: **Clarity 1**
 
-**input:** `int, ... | uint, ...`
+**Input:** `int, ... | uint, ...`
 
-**output:** `int | uint`
+**Output:** `int | uint`
 
-**signature:** `(- i1 i2...)`
+**Signature:** `(- i1 i2...)`
 
-**description:**
+**Description:**
 
 Subtracts a variable number of integer inputs and returns the result. In the event of an _underflow_, throws a runtime error.
 
-**example:**
+**Example:**
 
 ```
 (- 2 1 1) ;; Returns 0
 (- 0 3) ;; Returns -3
 ```
 
-## / (divide)​
+## / (divide)
 
 Introduced in: **Clarity 1**
 
-**input:** `int, ... | uint, ...`
+**Input:** `int, ... | uint, ...`
 
-**output:** `int | uint`
+**Output:** `int | uint`
 
-**signature:** `(/ i1 i2...)`
+**Signature:** `(/ i1 i2...)`
 
-**description:**
+**Description:**
 
 Integer divides a variable number of integer inputs and returns the result. In the event of division by zero, throws a runtime error.
 
-**example:**
+**Example:**
 
 ```
 (/ 2 3) ;; Returns 0
@@ -85,21 +85,23 @@ Integer divides a variable number of integer inputs and returns the result. In t
 (/ 4 2 2) ;; Returns 1
 ```
 
-## < (less than)​
+## < (less than)
 
 Introduced in: **Clarity 1**
 
-**input:** `int, int | uint, uint | string-ascii, string-ascii | string-utf8, string-utf8 | buff, buff`
+**Input:** `int, int | uint, uint | string-ascii, string-ascii | string-utf8, string-utf8 | buff, buff`
 
-**output:** `bool`
+**Output:** `bool`
 
-**signature:** `(< i1 i2)`
+**Signature:** `(< i1 i2)`
 
-**description:**
+**Description:**
 
-Compares two integers, returning `true` if `i1` is less than `i2` and `false` otherwise. i1 and i2 must be of the same type. Starting with Stacks 1.0, the `<`-comparable types are `int` and `uint`. Starting with Stacks 2.1, the `<`-comparable types are expanded to include `string-ascii`, `string-utf8` and `buff`.
+Compares two integers, returning `true` if `i1` is less than `i2` and `false` otherwise.
+i1 and i2 must be of the same type. Starting with Stacks 1.0, the `<`-comparable types are `int` and `uint`. Starting with Stacks 2.1,
+the `<`-comparable types are expanded to include `string-ascii`, `string-utf8` and `buff`.
 
-**example:**
+**Example:**
 
 ```
 (< 1 2) ;; Returns true
@@ -110,21 +112,23 @@ Compares two integers, returning `true` if `i1` is less than `i2` and `false` ot
 (< 5 u2) ;; Throws type error
 ```
 
-## <= (less than or equal)​
+## <= (less than or equal)
 
 Introduced in: **Clarity 1**
 
-**input:** `int, int | uint, uint | string-ascii, string-ascii | string-utf8, string-utf8 | buff, buff`
+**Input:** `int, int | uint, uint | string-ascii, string-ascii | string-utf8, string-utf8 | buff, buff`
 
-**output:** `bool`
+**Output:** `bool`
 
-**signature:** `(<= i1 i2)`
+**Signature:** `(<= i1 i2)`
 
-**description:**
+**Description:**
 
-Compares two integers, returning true if `i1` is less than or equal to `i2` and `false` otherwise. i1 and i2 must be of the same type. Starting with Stacks 1.0, the `<=`-comparable types are `int` and `uint`. Starting with Stacks 2.1, the `<=`-comparable types are expanded to include `string-ascii`, `string-utf8` and `buff`.
+Compares two integers, returning true if `i1` is less than or equal to `i2` and `false` otherwise.
+i1 and i2 must be of the same type. Starting with Stacks 1.0, the `<=`-comparable types are `int` and `uint`. Starting with Stacks 2.1,
+the `<=`-comparable types are expanded to include `string-ascii`, `string-utf8` and `buff`.
 
-**example:**
+**Example:**
 
 ```
 (<= 1 1) ;; Returns true
@@ -135,21 +139,23 @@ Compares two integers, returning true if `i1` is less than or equal to `i2` and 
 (<= 5 u2) ;; Throws type error
 ```
 
-## > (greater than)​
+## > (greater than)
 
 Introduced in: **Clarity 1**
 
-**input:** `int, int | uint, uint | string-ascii, string-ascii | string-utf8, string-utf8 | buff, buff`
+**Input:** `int, int | uint, uint | string-ascii, string-ascii | string-utf8, string-utf8 | buff, buff`
 
-**output:** `bool`
+**Output:** `bool`
 
-**signature:** `(> i1 i2)`
+**Signature:** `(> i1 i2)`
 
-**description:**
+**Description:**
 
-Compares two integers, returning `true` if `i1` is greater than `i2` and false otherwise. i1 and i2 must be of the same type. Starting with Stacks 1.0, the `>`-comparable types are `int` and `uint`. Starting with Stacks 2.1, the `>`-comparable types are expanded to include `string-ascii`, `string-utf8` and `buff`.
+Compares two integers, returning `true` if `i1` is greater than `i2` and false otherwise.
+i1 and i2 must be of the same type. Starting with Stacks 1.0, the `>`-comparable types are `int` and `uint`. Starting with Stacks 2.1,
+the `>`-comparable types are expanded to include `string-ascii`, `string-utf8` and `buff`.
 
-**example:**
+**Example:**
 
 ```
 (> 1 2) ;; Returns false
@@ -160,21 +166,24 @@ Compares two integers, returning `true` if `i1` is greater than `i2` and false o
 (> 5 u2) ;; Throws type error
 ```
 
-## >= (greater than or equal)​
+## >= (greater than or equal)
 
 Introduced in: **Clarity 1**
 
-**input:** `int, int | uint, uint | string-ascii, string-ascii | string-utf8, string-utf8 | buff, buff`
+**Input:** `int, int | uint, uint | string-ascii, string-ascii | string-utf8, string-utf8 | buff, buff`
 
-**output:** `bool`
+**Output:** `bool`
 
-**signature:** `(>= i1 i2)`
+**Signature:** `(>= i1 i2)`
 
-**description:**
+**Description:**
 
-Compares two integers, returning `true` if `i1` is greater than or equal to `i2` and `false` otherwise. i1 and i2 must be of the same type. Starting with Stacks 1.0, the `>=`-comparable types are `int` and `uint`. Starting with Stacks 2.1, the `>=`-comparable types are expanded to include `string-ascii`, `string-utf8` and `buff`.
+Compares two integers, returning `true` if `i1` is greater than or equal to `i2` and `false` otherwise.
+i1 and i2 must be of the same type. Starting with Stacks 1.0, the `>=`-comparable types are `int` and `uint`. Starting with Stacks 2.1,
+the `>=`-comparable types are expanded to include `string-ascii`, `string-utf8` and `buff`.
+    
 
-**example:**
+**Example:**
 
 ```
 (>= 1 1) ;; Returns true
@@ -185,21 +194,24 @@ Compares two integers, returning `true` if `i1` is greater than or equal to `i2`
 (>= 5 u2) ;; Throws type error
 ```
 
-## and​
+## and
 
 Introduced in: **Clarity 1**
 
-**input:** `bool, ...`
+**Input:** `bool, ...`
 
-**output:** `bool`
+**Output:** `bool`
 
-**signature:** `(and b1 b2 ...)`
+**Signature:** `(and b1 b2 ...)`
 
-**description:**
+**Description:**
 
-Returns `true` if all boolean inputs are `true`. Importantly, the supplied arguments are evaluated in-order and lazily. Lazy evaluation means that if one of the arguments returns `false`, the function short-circuits, and no subsequent arguments are evaluated.
+Returns `true` if all boolean inputs are `true`. Importantly, the supplied arguments are 
+evaluated in-order and lazily. Lazy evaluation means that if one of the arguments returns `false`, the function 
+short-circuits, and no subsequent arguments are evaluated.
 
-**example:**
+
+**Example:**
 
 ```
 (and true false) ;; Returns false
@@ -207,61 +219,67 @@ Returns `true` if all boolean inputs are `true`. Importantly, the supplied argum
 (and (is-eq (+ 1 2) 3) (is-eq 4 4)) ;; Returns true
 ```
 
-## append​
+## append
 
 Introduced in: **Clarity 1**
 
-**input:** `list A, A`
+**Input:** `list A, A`
 
-**output:** `list`
+**Output:** `list`
 
-**signature:** `(append (list 1 2 3 4) 5)`
+**Signature:** `(append (list 1 2 3 4) 5)`
 
-**description:**
+**Description:**
 
-The `append` function takes a list and another value with the same entry type, and outputs a list of the same type with max\_len += 1.
+The `append` function takes a list and another value with the same entry type,
+and outputs a list of the same type with max_len += 1.
 
-**example:**
+**Example:**
 
 ```
 (append (list 1 2 3 4) 5) ;; Returns (1 2 3 4 5)
 ```
 
-## as-contract​
+## as-contract
 
 Introduced in: **Clarity 1**
 
-**input:** `A`
+**Input:** `A`
 
-**output:** `A`
+**Output:** `A`
 
-**signature:** `(as-contract expr)`
+**Signature:** `(as-contract expr)`
 
-**description:**
+**Description:**
 
-The `as-contract` function switches the current context's `tx-sender` value to the _contract's_ principal and executes `expr` with that context. It returns the resulting value of `expr`.
+The `as-contract` function switches the current context's `tx-sender` value to the _contract's_
+principal and executes `expr` with that context. It returns the resulting value of `expr`.
 
-**example:**
+**Example:**
 
 ```
 (as-contract tx-sender) ;; Returns S1G2081040G2081040G2081040G208105NK8PE5.docs-test
 ```
 
-## as-max-len?​
+## as-max-len?
 
 Introduced in: **Clarity 1**
 
-**input:** `sequence_A, uint`
+**Input:** `sequence_A, uint`
 
-**output:** `(optional sequence_A)`
+**Output:** `(optional sequence_A)`
 
-**signature:** `(as-max-len? sequence max_length)`
+**Signature:** `(as-max-len? sequence max_length)`
 
-**description:**
+**Description:**
 
-The `as-max-len?` function takes a sequence argument and a uint-valued, literal length argument. The function returns an optional type. If the input sequence length is less than or equal to the supplied max\_length, this returns `(some sequence)`, otherwise it returns `none`. Applicable sequence types are `(list A)`, `buff`, `string-ascii` and `string-utf8`.
+The `as-max-len?` function takes a sequence argument and a uint-valued, literal length argument.
+The function returns an optional type. If the input sequence length is less than
+or equal to the supplied max_length, this returns `(some sequence)`, otherwise it returns `none`.
+Applicable sequence types are `(list A)`, `buff`, `string-ascii` and `string-utf8`.
 
-**example:**
+
+**Example:**
 
 ```
 (as-max-len? (list 2 2 2) u3) ;; Returns (some (2 2 2))
@@ -274,83 +292,93 @@ The `as-max-len?` function takes a sequence argument and a uint-valued, literal 
 
 Introduced in: **Clarity 1**
 
-**input:** `bool, C`
+**Input:** `bool, C`
 
-**output:** `bool`
+**Output:** `bool`
 
-**signature:** `(asserts! bool-expr thrown-value)`
+**Signature:** `(asserts! bool-expr thrown-value)`
 
-**description:**
+**Description:**
 
-The `asserts!` function admits a boolean argument and asserts its evaluation: if bool-expr is `true`, `asserts!` returns `true` and proceeds in the program execution. If the supplied argument is returning a false value, `asserts!` _returns_ `thrown-value` and exits the current control-flow.
+The `asserts!` function admits a boolean argument and asserts its evaluation:
+if bool-expr is `true`, `asserts!` returns `true` and proceeds in the program execution.
+If the supplied argument is returning a false value, `asserts!` _returns_ `thrown-value` and exits the current
+control-flow.
 
-**example:**
+**Example:**
 
 ```
 (asserts! (is-eq 1 1) (err 1)) ;; Returns true
 ```
 
-## at-block​
+## at-block
 
 Introduced in: **Clarity 1**
 
-**input:** `(buff 32), A`
+**Input:** `(buff 32), A`
 
-**output:** `A`
+**Output:** `A`
 
-**signature:** `(at-block id-block-hash expr)`
+**Signature:** `(at-block id-block-hash expr)`
 
-**description:**
+**Description:**
 
-The `at-block` function evaluates the expression `expr` _as if_ it were evaluated at the end of the block indicated by the _block-hash_ argument. The `expr` closure must be read-only.
+The `at-block` function evaluates the expression `expr` _as if_ it were evaluated at the end of the
+block indicated by the _block-hash_ argument. The `expr` closure must be read-only.
 
-Note: The block identifying hash must be a hash returned by the `id-header-hash` block information property. This hash uniquely identifies Stacks blocks and is unique across Stacks forks. While the hash returned by `header-hash` is unique within the context of a single fork, it is not unique across Stacks forks.
+Note: The block identifying hash must be a hash returned by the `id-header-hash` block information
+property. This hash uniquely identifies Stacks blocks and is unique across Stacks forks. While the hash returned by
+`header-hash` is unique within the context of a single fork, it is not unique across Stacks forks.
 
 The function returns the result of evaluating `expr`.
 
-**example:**
+
+**Example:**
 
 ```
 (define-data-var data int 1)
 (at-block 0x0000000000000000000000000000000000000000000000000000000000000000 block-height) ;; Returns u0
-(at-block (get-block-info? id-header-hash 0) (var-get data)) ;; Throws NoSuchDataVariable because `data` wasn't initialized at block height 0
+(at-block (unwrap-panic (get-block-info? id-header-hash u0)) (var-get data)) ;; Throws NoSuchDataVariable because `data` wasn't initialized at block height 0
 ```
 
-## begin​
+## begin
 
 Introduced in: **Clarity 1**
 
-**input:** `AnyType, ... A`
+**Input:** `AnyType, ... A`
 
-**output:** `A`
+**Output:** `A`
 
-**signature:** `(begin expr1 expr2 expr3 ... expr-last)`
+**Signature:** `(begin expr1 expr2 expr3 ... expr-last)`
 
-**description:**
+**Description:**
 
-The `begin` function evaluates each of its input expressions, returning the return value of the last such expression. Note: intermediary statements returning a response type must be checked.
+The `begin` function evaluates each of its input expressions, returning the
+return value of the last such expression.
 
-**example:**
+Note: intermediary statements returning a response type must be checked.
+
+**Example:**
 
 ```
 (begin (+ 1 2) 4 5) ;; Returns 5
 ```
 
-## bit-and​
+## bit-and
 
 Introduced in: **Clarity 2**
 
-**input:** `int, ... | uint, ...`
+**Input:** `int, ... | uint, ...`
 
-**output:** `int | uint`
+**Output:** `int | uint`
 
-**signature:** `(bit-and i1 i2...)`
+**Signature:** `(bit-and i1 i2...)`
 
-**description:**
+**Description:**
 
 Returns the result of bitwise and'ing a variable number of integer inputs.
 
-**example:**
+**Example:**
 
 ```
 (bit-and 24 16) ;; Returns 16
@@ -360,21 +388,23 @@ Returns the result of bitwise and'ing a variable number of integer inputs.
 (bit-and 28 24 -1) ;; Returns 24
 ```
 
-## bit-not​
+## bit-not
 
 Introduced in: **Clarity 2**
 
-**input:** `int | uint`
+**Input:** `int | uint`
 
-**output:** `int | uint`
+**Output:** `int | uint`
 
-**signature:** `(bit-not i1)`
+**Signature:** `(bit-not i1)`
 
-**description:**
+**Description:**
 
-Returns the one's complement (sometimes also called the bitwise compliment or not operator) of `i1`, effectively reversing the bits in `i1`. In other words, every bit that is `1` in ì1`will be`0`in the result. Conversely, every bit that is`0`in`i1`will be`1\` in the result.
+Returns the one's compliement (sometimes also called the bitwise compliment or not operator) of `i1`, effectively reversing the bits in `i1`.
+In other words, every bit that is `1` in `ì1` will be `0` in the result.  Conversely, every bit that is `0` in `i1` will be `1` in the result.
 
-**example:**
+
+**Example:**
 
 ```
 (bit-not 3) ;; Returns -4
@@ -383,21 +413,21 @@ Returns the one's complement (sometimes also called the bitwise compliment or no
 (bit-not -128) ;; Returns 127
 ```
 
-## bit-or​
+## bit-or
 
 Introduced in: **Clarity 2**
 
-**input:** `int, ... | uint, ...`
+**Input:** `int, ... | uint, ...`
 
-**output:** `int | uint`
+**Output:** `int | uint`
 
-**signature:** `(bit-or i1 i2...)`
+**Signature:** `(bit-or i1 i2...)`
 
-**description:**
+**Description:**
 
 Returns the result of bitwise inclusive or'ing a variable number of integer inputs.
 
-**example:**
+**Example:**
 
 ```
 (bit-or 4 8) ;; Returns 12
@@ -406,23 +436,25 @@ Returns the result of bitwise inclusive or'ing a variable number of integer inpu
 (bit-or u2 u4 u32) ;; Returns u38
 ```
 
-## bit-shift-left​
+## bit-shift-left
 
 Introduced in: **Clarity 2**
 
-**input:** `int, uint | uint, uint`
+**Input:** `int, uint | uint, uint`
 
-**output:** `int | uint`
+**Output:** `int | uint`
 
-**signature:** `(bit-shift-left i1 shamt)`
+**Signature:** `(bit-shift-left i1 shamt)`
 
-**description:**
+**Description:**
 
-Shifts all the bits in `i1` to the left by the number of places specified in `shamt` modulo 128 (the bit width of Clarity integers).
+Shifts all the bits in `i1` to the left by the number of places specified in `shamt` modulo 128 (the bit width of Clarity integers). 
 
-Note that there is a deliberate choice made to ignore arithmetic overflow for this operation. In use cases where overflow should be detected, developers should use `*`, `/`, and `pow` instead of the shift operators.
+Note that there is a deliberate choice made to ignore arithmetic overflow for this operation.  In use cases where overflow should be detected, developers
+should use `*`, `/`, and `pow` instead of the shift operators.
 
-**example:**
+
+**Example:**
 
 ```
 (bit-shift-left 2 u1) ;; Returns 4
@@ -435,23 +467,25 @@ Note that there is a deliberate choice made to ignore arithmetic overflow for th
 (bit-shift-left -1 u128) ;; Returns -1
 ```
 
-## bit-shift-right​
+## bit-shift-right
 
 Introduced in: **Clarity 2**
 
-**input:** `int, uint | uint, uint`
+**Input:** `int, uint | uint, uint`
 
-**output:** `int | uint`
+**Output:** `int | uint`
 
-**signature:** `(bit-shift-right i1 shamt)`
+**Signature:** `(bit-shift-right i1 shamt)`
 
-**description:**
+**Description:**
 
-Shifts all the bits in `i1` to the right by the number of places specified in `shamt` modulo 128 (the bit width of Clarity integers). When `i1` is a `uint` (unsigned), new bits are filled with zeros. When `i1` is an `int` (signed), the sign is preserved, meaning that new bits are filled with the value of the previous sign-bit.
+Shifts all the bits in `i1` to the right by the number of places specified in `shamt` modulo 128 (the bit width of Clarity integers). 
+When `i1` is a `uint` (unsigned), new bits are filled with zeros. When `i1` is an `int` (signed), the sign is preserved, meaning that new bits are filled with the value of the previous sign-bit.
 
 Note that there is a deliberate choice made to ignore arithmetic overflow for this operation. In use cases where overflow should be detected, developers should use `*`, `/`, and `pow` instead of the shift operators.
 
-**example:**
+
+**Example:**
 
 ```
 (bit-shift-right 2 u1) ;; Returns 1
@@ -466,21 +500,21 @@ Note that there is a deliberate choice made to ignore arithmetic overflow for th
 (bit-shift-right -5 u2) ;; Returns -2
 ```
 
-## bit-xor​
+## bit-xor
 
 Introduced in: **Clarity 2**
 
-**input:** `int, ... | uint, ...`
+**Input:** `int, ... | uint, ...`
 
-**output:** `int | uint`
+**Output:** `int | uint`
 
-**signature:** `(bit-xor i1 i2...)`
+**Signature:** `(bit-xor i1 i2...)`
 
-**description:**
+**Description:**
 
 Returns the result of bitwise exclusive or'ing a variable number of integer inputs.
 
-**example:**
+**Example:**
 
 ```
 (bit-xor 1 2) ;; Returns 3
@@ -490,23 +524,26 @@ Returns the result of bitwise exclusive or'ing a variable number of integer inpu
 (bit-xor 1 2 4 -1) ;; Returns -8
 ```
 
-## buff-to-int-be​
+## buff-to-int-be
 
 Introduced in: **Clarity 2**
 
-**input:** `(buff 16)`
+**Input:** `(buff 16)`
 
-**output:** `int`
+**Output:** `int`
 
-**signature:** `(buff-to-int-be (buff 16))`
+**Signature:** `(buff-to-int-be (buff 16))`
 
-**description:**
+**Description:**
 
-Converts a byte buffer to a signed integer use a big-endian encoding. The byte buffer can be up to 16 bytes in length. If there are fewer than 16 bytes, as this function uses a big-endian encoding, the input behaves as if it is zero-padded on the _left_.
+Converts a byte buffer to a signed integer use a big-endian encoding.
+The byte buffer can be up to 16 bytes in length. If there are fewer than 16 bytes, as
+this function uses a big-endian encoding, the input behaves as if it is
+zero-padded on the _left_.
 
 Note: This function is only available starting with Stacks 2.1.
 
-**example:**
+**Example:**
 
 ```
 (buff-to-int-be 0x01) ;; Returns 1
@@ -515,23 +552,26 @@ Note: This function is only available starting with Stacks 2.1.
 (buff-to-int-be 0x) ;; Returns 0
 ```
 
-## buff-to-int-le​
+## buff-to-int-le
 
 Introduced in: **Clarity 2**
 
-**input:** `(buff 16)`
+**Input:** `(buff 16)`
 
-**output:** `int`
+**Output:** `int`
 
-**signature:** `(buff-to-int-le (buff 16))`
+**Signature:** `(buff-to-int-le (buff 16))`
 
-**description:**
+**Description:**
 
-Converts a byte buffer to a signed integer use a little-endian encoding. The byte buffer can be up to 16 bytes in length. If there are fewer than 16 bytes, as this function uses a little-endian encoding, the input behaves as if it is zero-padded on the _right_.
+Converts a byte buffer to a signed integer use a little-endian encoding.
+The byte buffer can be up to 16 bytes in length. If there are fewer than 16 bytes, as
+this function uses a little-endian encoding, the input behaves as if it is
+zero-padded on the _right_.
 
 Note: This function is only available starting with Stacks 2.1.
 
-**example:**
+**Example:**
 
 ```
 (buff-to-int-le 0x01) ;; Returns 1
@@ -540,23 +580,26 @@ Note: This function is only available starting with Stacks 2.1.
 (buff-to-int-le 0x) ;; Returns 0
 ```
 
-## buff-to-uint-be​
+## buff-to-uint-be
 
 Introduced in: **Clarity 2**
 
-**input:** `(buff 16)`
+**Input:** `(buff 16)`
 
-**output:** `uint`
+**Output:** `uint`
 
-**signature:** `(buff-to-uint-be (buff 16))`
+**Signature:** `(buff-to-uint-be (buff 16))`
 
-**description:**
+**Description:**
 
-Converts a byte buffer to an unsigned integer use a big-endian encoding. The byte buffer can be up to 16 bytes in length. If there are fewer than 16 bytes, as this function uses a big-endian encoding, the input behaves as if it is zero-padded on the _left_.
+Converts a byte buffer to an unsigned integer use a big-endian encoding.
+The byte buffer can be up to 16 bytes in length. If there are fewer than 16 bytes, as
+this function uses a big-endian encoding, the input behaves as if it is
+zero-padded on the _left_.
 
 Note: This function is only available starting with Stacks 2.1.
 
-**example:**
+**Example:**
 
 ```
 (buff-to-uint-be 0x01) ;; Returns u1
@@ -565,23 +608,26 @@ Note: This function is only available starting with Stacks 2.1.
 (buff-to-uint-be 0x) ;; Returns u0
 ```
 
-## buff-to-uint-le​
+## buff-to-uint-le
 
 Introduced in: **Clarity 2**
 
-**input:** `(buff 16)`
+**Input:** `(buff 16)`
 
-**output:** `uint`
+**Output:** `uint`
 
-**signature:** `(buff-to-uint-le (buff 16))`
+**Signature:** `(buff-to-uint-le (buff 16))`
 
-**description:**
+**Description:**
 
-Converts a byte buffer to an unsigned integer use a little-endian encoding.. The byte buffer can be up to 16 bytes in length. If there are fewer than 16 bytes, as this function uses a little-endian encoding, the input behaves as if it is zero-padded on the _right_.
+Converts a byte buffer to an unsigned integer use a little-endian encoding.
+The byte buffer can be up to 16 bytes in length. If there are fewer than 16 bytes, as
+this function uses a little-endian encoding, the input behaves as if it is
+zero-padded on the _right_.
 
 Note: This function is only available starting with Stacks 2.1.
 
-**example:**
+**Example:**
 
 ```
 (buff-to-uint-le 0x01) ;; Returns u1
@@ -590,21 +636,25 @@ Note: This function is only available starting with Stacks 2.1.
 (buff-to-uint-le 0x) ;; Returns u0
 ```
 
-## concat​
+## concat
 
 Introduced in: **Clarity 1**
 
-**input:** `sequence_A, sequence_A`
+**Input:** `sequence_A, sequence_A`
 
-**output:** `sequence_A`
+**Output:** `sequence_A`
 
-**signature:** `(concat sequence1 sequence2)`
+**Signature:** `(concat sequence1 sequence2)`
 
-**description:**
+**Description:**
 
-The `concat` function takes two sequences of the same type, and returns a concatenated sequence of the same type, with the resulting sequence\_len = sequence1\_len + sequence2\_len. Applicable sequence types are `(list A)`, `buff`, `string-ascii` and `string-utf8`.
+The `concat` function takes two sequences of the same type,
+and returns a concatenated sequence of the same type, with the resulting
+sequence_len = sequence1_len + sequence2_len.
+Applicable sequence types are `(list A)`, `buff`, `string-ascii` and `string-utf8`.
 
-**example:**
+
+**Example:**
 
 ```
 (concat (list 1 2) (list 3 4)) ;; Returns (1 2 3 4)
@@ -612,65 +662,70 @@ The `concat` function takes two sequences of the same type, and returns a concat
 (concat 0x0102 0x0304) ;; Returns 0x01020304
 ```
 
-## contract-call?​
+## contract-call?
 
 Introduced in: **Clarity 1**
 
-**input:** `ContractName, PublicFunctionName, Arg0, ...`
+**Input:** `ContractName, PublicFunctionName, Arg0, ...`
 
-**output:** `(response A B)`
+**Output:** `(response A B)`
 
-**signature:** `(contract-call? .contract-name function-name arg0 arg1 ...)`
+**Signature:** `(contract-call? .contract-name function-name arg0 arg1 ...)`
 
-**description:**
+**Description:**
 
-The `contract-call?` function executes the given public function of the given contract. You _may not_ use this function to call a public function defined in the current contract. If the public function returns _err_, any database changes resulting from calling `contract-call?` are aborted. If the function returns _ok_, database changes occurred.
+The `contract-call?` function executes the given public function of the given contract.
+You _may not_ use this function to call a public function defined in the current contract. If the public
+function returns _err_, any database changes resulting from calling `contract-call?` are aborted.
+If the function returns _ok_, database changes occurred.
 
-**example:**
+**Example:**
 
 ```
-;; instantiate the sample-contracts/tokens.clar contract first
+;; instantiate the sample/contracts/tokens.clar contract first!
 (as-contract (contract-call? .tokens mint! u19)) ;; Returns (ok u19)
 ```
 
-## contract-of​
+## contract-of
 
 Introduced in: **Clarity 1**
 
-**input:** `Trait`
+**Input:** `Trait`
 
-**output:** `principal`
+**Output:** `principal`
 
-**signature:** `(contract-of .contract-name)`
+**Signature:** `(contract-of .contract-name)`
 
-**description:**
+**Description:**
 
 The `contract-of` function returns the principal of the contract implementing the trait.
 
-**example:**
+**Example:**
 
 ```
 (use-trait token-a-trait 'SPAXYA5XS51713FDTQ8H94EJ4V579CXMTRNBZKSF.token-a.token-trait)
 (define-public (forward-get-balance (user principal) (contract <token-a-trait>))
-  (begin    
+  (begin
     (ok (contract-of contract)))) ;; returns the principal of the contract implementing <token-a-trait>
 ```
 
-## default-to​
+## default-to
 
 Introduced in: **Clarity 1**
 
-**input:** `A, (optional A)`
+**Input:** `A, (optional A)`
 
-**output:** `A`
+**Output:** `A`
 
-**signature:** `(default-to default-value option-value)`
+**Signature:** `(default-to default-value option-value)`
 
-**description:**
+**Description:**
 
-The `default-to` function attempts to 'unpack' the second argument: if the argument is a `(some ...)` option, it returns the inner value of the option. If the second argument is a `(none)` value, `default-to` it returns the value of `default-value`.
+The `default-to` function attempts to 'unpack' the second argument: if the argument is
+a `(some ...)` option, it returns the inner value of the option. If the second argument is a `none` value,
+`default-to` it returns the value of `default-value`.
 
-**example:**
+**Example:**
 
 ```
 (define-map names-map { name: (string-ascii 12) } { id: int })
@@ -679,107 +734,119 @@ The `default-to` function attempts to 'unpack' the second argument: if the argum
 (default-to 0 (get id (map-get? names-map (tuple (name "non-existant"))))) ;; Returns 0
 ```
 
-## define-constant​
+## define-constant
 
 Introduced in: **Clarity 1**
 
-**input:** `MethodSignature, MethodBody`
+**Input:** `MethodSignature, MethodBody`
 
-**output:** `Not Applicable`
+**Output:** `Not Applicable`
 
-**signature:** `(define-constant name expression)`
+**Signature:** `(define-constant name expression)`
 
-**description:**
+**Description:**
 
-`define-constant` is used to define a private constant value in a smart contract. The expression passed into the definition is evaluated at contract launch, in the order that it is supplied in the contract. This can lead to undefined function or undefined variable errors in the event that a function or variable used in the expression has not been defined before the constant.
+`define-constant` is used to define a private constant value in a smart contract.
+The expression passed into the definition is evaluated at contract launch, in the order that it is
+supplied in the contract. This can lead to undefined function or undefined variable errors in the
+event that a function or variable used in the expression has not been defined before the constant.
 
-Like other kinds of definition statements, `define-constant` may only be used at the top level of a smart contract definition (i.e., you cannot put a define statement in the middle of a function body).
+Like other kinds of definition statements, `define-constant` may only be used at the top level of a smart contract
+definition (i.e., you cannot put a define statement in the middle of a function body).
 
-**example:**
+
+**Example:**
 
 ```
 (define-constant four (+ 2 2))
 (+ 4 four) ;; Returns 8
 ```
 
-## define-data-var​
+## define-data-var
 
 Introduced in: **Clarity 1**
 
-**input:** `VarName, TypeDefinition, Value`
+**Input:** `VarName, TypeDefinition, Value`
 
-**output:** `Not Applicable`
+**Output:** `Not Applicable`
 
-**signature:** `(define-data-var var-name type value)`
+**Signature:** `(define-data-var var-name type value)`
 
-**description:**
+**Description:**
 
-`define-data-var` is used to define a new persisted variable for use in a smart contract. Such variable are only modifiable by the current smart contract.
+`define-data-var` is used to define a new persisted variable for use in a smart contract. Such
+variable are only modifiable by the current smart contract.
 
 Persisted variable are defined with a type and a value.
 
-Like other kinds of definition statements, `define-data-var` may only be used at the top level of a smart contract definition (i.e., you cannot put a define statement in the middle of a function body).
+Like other kinds of definition statements, `define-data-var` may only be used at the top level of a smart contract
+definition (i.e., you cannot put a define statement in the middle of a function body).
 
-**example:**
+**Example:**
 
 ```
 (define-data-var size int 0)
-(define-private (set-size (value int))  
+(define-private (set-size (value int))
   (var-set size value))
 (set-size 1)
 (set-size 2)
 ```
 
-## define-fungible-token​
+## define-fungible-token
 
 Introduced in: **Clarity 1**
 
-**input:** `TokenName, <uint>`
+**Input:** `TokenName, <uint>`
 
-**output:** `Not Applicable`
+**Output:** `Not Applicable`
 
-**signature:** `(define-fungible-token token-name <total-supply>)`
+**Signature:** `(define-fungible-token token-name <total-supply>)`
 
-**description:**
+**Description:**
 
 `define-fungible-token` is used to define a new fungible token class for use in the current contract.
 
-The second argument, if supplied, defines the total supply of the fungible token. This ensures that all calls to the `ft-mint?` function will never be able to create more than `total-supply` tokens. If any such call were to increase the total supply of tokens passed that amount, that invocation of `ft-mint?` will result in a runtime error and abort.
+The second argument, if supplied, defines the total supply of the fungible token. This ensures that all calls to the `ft-mint?`
+function will never be able to create more than `total-supply` tokens. If any such call were to increase the total supply
+of tokens passed that amount, that invocation of `ft-mint?` will result in a runtime error and abort.
 
-Like other kinds of definition statements, `define-fungible-token` may only be used at the top level of a smart contract definition (i.e., you cannot put a define statement in the middle of a function body).
+Like other kinds of definition statements, `define-fungible-token` may only be used at the top level of a smart contract
+definition (i.e., you cannot put a define statement in the middle of a function body).
 
 Tokens defined using `define-fungible-token` may be used in `ft-transfer?`, `ft-mint?`, and `ft-get-balance` functions
 
-**example:**
+**Example:**
 
 ```
 (define-fungible-token stacks)
 (define-fungible-token limited-supply-stacks u100)
 ```
 
-## define-map​
+## define-map
 
 Introduced in: **Clarity 1**
 
-**input:** `MapName, TypeDefinition, TypeDefinition`
+**Input:** `MapName, TypeDefinition, TypeDefinition`
 
-**output:** `Not Applicable`
+**Output:** `Not Applicable`
 
-**signature:** `(define-map map-name key-type value-type)`
+**Signature:** `(define-map map-name key-type value-type)`
 
-**description:**
+**Description:**
 
-`define-map` is used to define a new datamap for use in a smart contract. Such maps are only modifiable by the current smart contract.
+`define-map` is used to define a new datamap for use in a smart contract. Such
+maps are only modifiable by the current smart contract.
 
 Maps are defined with a key type and value type, often these types are tuple types.
 
-Like other kinds of definition statements, `define-map` may only be used at the top level of a smart contract definition (i.e., you cannot put a define statement in the middle of a function body).
+Like other kinds of definition statements, `define-map` may only be used at the top level of a smart contract
+definition (i.e., you cannot put a define statement in the middle of a function body).
 
-**example:**
+**Example:**
 
 ```
 (define-map squares { x: int } { square: int })
-(define-private (add-entry (x int)) 
+(define-private (add-entry (x int))
   (map-insert squares { x: 2 } { square: (* x x) }))
 (add-entry 1)
 (add-entry 2)
@@ -788,155 +855,189 @@ Like other kinds of definition statements, `define-map` may only be used at the 
 (add-entry 5)
 ```
 
-## define-non-fungible-token​
+## define-non-fungible-token
 
 Introduced in: **Clarity 1**
 
-**input:** `AssetName, TypeSignature`
+**Input:** `AssetName, TypeSignature`
 
-**output:** `Not Applicable`
+**Output:** `Not Applicable`
 
-**signature:** `(define-non-fungible-token asset-name asset-identifier-type)`
+**Signature:** `(define-non-fungible-token asset-name asset-identifier-type)`
 
-**description:**
+**Description:**
 
-`define-non-fungible-token` is used to define a new non-fungible token class for use in the current contract. Individual assets are identified by their asset identifier, which must be of the type `asset-identifier-type`. Asset identifiers are _unique_ identifiers.
+`define-non-fungible-token` is used to define a new non-fungible token class for use in the current contract.
+Individual assets are identified by their asset identifier, which must be of the type `asset-identifier-type`. Asset
+identifiers are _unique_ identifiers.
 
-Like other kinds of definition statements, `define-non-fungible-token` may only be used at the top level of a smart contract definition (i.e., you cannot put a define statement in the middle of a function body).
+Like other kinds of definition statements, `define-non-fungible-token` may only be used at the top level of a smart contract
+definition (i.e., you cannot put a define statement in the middle of a function body).
 
 Assets defined using `define-non-fungible-token` may be used in `nft-transfer?`, `nft-mint?`, and `nft-get-owner?` functions
 
-**example:**
+**Example:**
 
 ```
 (define-non-fungible-token names (buff 50))
 ```
 
-## define-private​
+## define-private
 
 Introduced in: **Clarity 1**
 
-**input:** `MethodSignature, MethodBody`
+**Input:** `MethodSignature, MethodBody`
 
-**output:** `Not Applicable`
+**Output:** `Not Applicable`
 
-**signature:** `(define-private (function-name (arg-name-0 arg-type-0) (arg-name-1 arg-type-1) ...) function-body)`
+**Signature:** `(define-private (function-name (arg-name-0 arg-type-0) (arg-name-1 arg-type-1) ...) function-body)`
 
-**description:**
+**Description:**
 
-`define-private` is used to define _private_ functions for a smart contract. Private functions may not be called from other smart contracts, nor may they be invoked directly by users. Instead, these functions may only be invoked by other functions defined in the same smart contract.
+`define-private` is used to define _private_ functions for a smart contract. Private
+functions may not be called from other smart contracts, nor may they be invoked directly by users.
+Instead, these functions may only be invoked by other functions defined in the same smart contract.
 
-Like other kinds of definition statements, `define-private` may only be used at the top level of a smart contract definition (i.e., you cannot put a define statement in the middle of a function body).
+Like other kinds of definition statements, `define-private` may only be used at the top level of a smart contract
+definition (i.e., you cannot put a define statement in the middle of a function body).
 
 Private functions may return any type.
 
-**example:**
+**Example:**
 
 ```
-(define-private (max-of (i1 int) (i2 int))  
+(define-private (max-of (i1 int) (i2 int))
   (if (> i1 i2)
-    i1      
-    i2))
+      i1
+      i2))
 (max-of 4 6) ;; Returns 6
 ```
 
-## define-public​
+## define-public
 
 Introduced in: **Clarity 1**
 
-**input:** `MethodSignature, MethodBody`
+**Input:** `MethodSignature, MethodBody`
 
-**output:** `Not Applicable`
+**Output:** `Not Applicable`
 
-**signature:** `(define-public (function-name (arg-name-0 arg-type-0) (arg-name-1 arg-type-1) ...) function-body)`
+**Signature:** `(define-public (function-name (arg-name-0 arg-type-0) (arg-name-1 arg-type-1) ...) function-body)`
 
-**description:**
+**Description:**
 
-`define-public` is used to define a _public_ function and transaction for a smart contract. Public functions are callable from other smart contracts and may be invoked directly by users by submitting a transaction to the Stacks blockchain.
+`define-public` is used to define a _public_ function and transaction for a smart contract. Public
+functions are callable from other smart contracts and may be invoked directly by users by submitting a transaction
+to the Stacks blockchain.
 
-Like other kinds of definition statements, `define-public` may only be used at the top level of a smart contract definition (i.e., you cannot put a define statement in the middle of a function body).
+Like other kinds of definition statements, `define-public` may only be used at the top level of a smart contract
+definition (i.e., you cannot put a define statement in the middle of a function body).
 
-Public functions _must_ return a ResponseType (using either `ok` or `err`). Any datamap modifications performed by a public function is aborted if the function returns an `err` type. Public functions may be invoked by other contracts via `contract-call?`.
+Public functions _must_ return a ResponseType (using either `ok` or `err`). Any datamap modifications performed by
+a public function is aborted if the function returns an `err` type. Public functions may be invoked by other
+contracts via `contract-call?`.
 
-**example:**
+**Example:**
 
 ```
-(define-public (hello-world (input int))  
-  (begin 
-    (print (+ 2 input))
-    (ok input)))
+(define-public (hello-world (input int))
+  (begin (print (+ 2 input))
+         (ok input)))
 ```
 
-## define-read-only​
+## define-read-only
 
 Introduced in: **Clarity 1**
 
-**input:** `MethodSignature, MethodBody`
+**Input:** `MethodSignature, MethodBody`
 
-**output:** `Not Applicable`
+**Output:** `Not Applicable`
 
-**signature:** `(define-read-only (function-name (arg-name-0 arg-type-0) (arg-name-1 arg-type-1) ...) function-body)`
+**Signature:** `(define-read-only (function-name (arg-name-0 arg-type-0) (arg-name-1 arg-type-1) ...) function-body)`
 
-**description:**
+**Description:**
 
-`define-read-only` is used to define a _public read-only_ function for a smart contract. Such functions are callable from other smart contracts.
+`define-read-only` is used to define a _public read-only_ function for a smart contract. Such
+functions are callable from other smart contracts.
 
-Like other kinds of definition statements, `define-read-only` may only be used at the top level of a smart contract definition (i.e., you cannot put a define statement in the middle of a function body).
+Like other kinds of definition statements, `define-read-only` may only be used at the top level of a smart contract
+definition (i.e., you cannot put a define statement in the middle of a function body).
 
-Read-only functions may return any type. However, read-only functions may not perform any datamap modifications, or call any functions which perform such modifications. This is enforced both during type checks and during the execution of the function. Public read-only functions may be invoked by other contracts via `contract-call?`.
+Read-only functions may return any type. However, read-only functions
+may not perform any datamap modifications, or call any functions which
+perform such modifications. This is enforced both during type checks and during
+the execution of the function. Public read-only functions may
+be invoked by other contracts via `contract-call?`.
 
-**example:**
+**Example:**
 
 ```
-(define-read-only (just-return-one-hundred)  
+(define-read-only (just-return-one-hundred)
   (* 10 10))
 ```
 
-## define-trait​
+## define-trait
 
 Introduced in: **Clarity 1**
 
-**input:** `VarName, [MethodSignature]`
+**Input:** `VarName, [MethodSignature]`
 
-**output:** `Not Applicable`
+**Output:** `Not Applicable`
 
-**signature:** `(define-trait trait-name ((func1-name (arg1-type arg2-type ...) (return-type))))`
+**Signature:** `(define-trait trait-name ((func1-name (arg1-type arg2-type ...) (return-type))))`
 
-**description:**
+**Description:**
 
-`define-trait` is used to define a new trait definition for use in a smart contract. Other contracts can implement a given trait and then have their contract identifier being passed as a function argument in order to be called dynamically with `contract-call?`.
+`define-trait` is used to define a new trait definition for use in a smart contract. Other contracts
+can implement a given trait and then have their contract identifier being passed as a function argument in order to be called
+dynamically with `contract-call?`.
 
-Traits are defined with a name, and a list functions, defined with a name, a list of argument types, and return type.
+Traits are defined with a name, and a list of functions, where each function is defined with a name, a list of argument types, and a return type.
 
-In Clarity 1, a trait type can be used to specify the type of a function parameter. A parameter with a trait type can be used as the target of a dynamic `contract-call?`. A principal literal (e.g. `ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.foo`) may be passed as a trait parameter if the specified contract implements all of the functions specified by the trait. A trait value (originating from a parameter with trait type) may also be passed as a trait parameter if the types are the same.
+In Clarity 1, a trait type can be used to specify the type of a function parameter. A parameter with a trait type can
+be used as the target of a dynamic `contract-call?`. A principal literal (e.g. `ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.foo`)
+may be passed as a trait parameter if the specified contract implements all of the functions specified by the trait.
+A trait value (originating from a parameter with trait type) may also be passed as a trait parameter if the types are the same.
 
-Beginning in Clarity 2, a trait can be used in all of the same ways that a built-in type can be used, except that it cannot be stored in a data var or map, since this would inhibit static analysis. This means that a trait type can be embedded in a compound type (e.g. `(optional <my-trait>)` or `(list 4 <my-trait>)`) and a trait value can be bound to a variable in a `let` or `match` expression. In addition to the principal literal and trait value with matching type allowed in Clarity 1, Clarity 2 also supports implicit casting from a compatible trait, meaning that a value of type `trait-a` may be passed to a parameter with type `trait-b` if `trait-a` includes all of the requirements of `trait-b` (and optionally additional functions).
+Beginning in Clarity 2, a trait can be used in all of the same ways that a built-in type can be used,
+except that it cannot be stored in a data var or map, since this would inhibit static analysis.
+This means that a trait type can be embedded in a compound type (e.g. `(optional <my-trait>)` or `(list 4 <my-trait>)`)
+and a trait value can be bound to a variable in a `let` or `match` expression. In addition to the principal literal
+and trait value with matching type allowed in Clarity 1, Clarity 2 also supports implicit casting from a
+compatible trait, meaning that a value of type `trait-a` may be passed to a parameter with type `trait-b` if `trait-a`
+includes all of the requirements of `trait-b` (and optionally additional functions).
 
-Like other kinds of definition statements, `define-trait` may only be used at the top level of a smart contract definition (i.e., you cannot put a define statement in the middle of a function body).
+Like other kinds of definition statements, `define-trait` may only be used at the top level of a smart contract
+definition (i.e., you cannot put a define statement in the middle of a function body).
 
-**example:**
+
+**Example:**
 
 ```
-(define-trait token-trait    
-  ((transfer? (principal principal uint) (response uint uint)) 
-  (get-balance (principal) (response uint uint))))
+(define-trait token-trait
+    ((transfer? (principal principal uint) (response uint uint))
+     (get-balance (principal) (response uint uint))))
 ```
 
-## element-at​
+## element-at
 
 Introduced in: **Clarity 1**
 
-**input:** `sequence_A, uint`
+**Input:** `sequence_A, uint`
 
-**output:** `(optional A)`
+**Output:** `(optional A)`
 
-**signature:** `(element-at? sequence index)`
+**Signature:** `(element-at? sequence index)`
 
-**description:**
+**Description:**
 
-The `element-at?` function returns the element at `index` in the provided sequence. Applicable sequence types are `(list A)`, `buff`, `string-ascii` and `string-utf8`, for which the corresponding element types are, respectively, `A`, `(buff 1)`, `(string-ascii 1)` and `(string-utf8 1)`. In Clarity1, `element-at` must be used (without the `?`). The `?` is added in Clarity2 for consistency -- built-ins that return responses or optionals end in `?`. The Clarity1 spelling is left as an alias in Clarity2 for backwards compatibility.
+The `element-at?` function returns the element at `index` in the provided sequence.
+Applicable sequence types are `(list A)`, `buff`, `string-ascii` and `string-utf8`,
+for which the corresponding element types are, respectively, `A`, `(buff 1)`, `(string-ascii 1)` and `(string-utf8 1)`.
 
-**example:**
+In Clarity1, `element-at` must be used (without the `?`). The `?` is added in Clarity2 for consistency -- built-ins that return responses or optionals end in `?`. The Clarity1 spelling is left as an alias in Clarity2 for backwards compatibility.
+
+
+**Example:**
 
 ```
 (element-at? "blockstack" u5) ;; Returns (some "s")
@@ -946,21 +1047,26 @@ The `element-at?` function returns the element at `index` in the provided sequen
 (element-at? 0xfb01 u1) ;; Returns (some 0x01)
 ```
 
-## element-at?​
+## element-at?
 
 Introduced in: **Clarity 2**
 
-**input:** `sequence_A, uint`
+**Input:** `sequence_A, uint`
 
-**output:** `(optional A)`
+**Output:** `(optional A)`
 
-**signature:** `(element-at? sequence index)`
+**Signature:** `(element-at? sequence index)`
 
-**description:**
+**Description:**
 
-The `element-at?` function returns the element at `index` in the provided sequence. Applicable sequence types are `(list A)`, `buff`, `string-ascii` and `string-utf8`, for which the corresponding element types are, respectively, `A`, `(buff 1)`, `(string-ascii 1)` and `(string-utf8 1)`. In Clarity1, `element-at` must be used (without the `?`). The `?` is added in Clarity2 for consistency -- built-ins that return responses or optionals end in `?`. The Clarity1 spelling is left as an alias in Clarity2 for backwards compatibility.
+The `element-at?` function returns the element at `index` in the provided sequence.
+Applicable sequence types are `(list A)`, `buff`, `string-ascii` and `string-utf8`,
+for which the corresponding element types are, respectively, `A`, `(buff 1)`, `(string-ascii 1)` and `(string-utf8 1)`.
 
-**example:**
+In Clarity1, `element-at` must be used (without the `?`). The `?` is added in Clarity2 for consistency -- built-ins that return responses or optionals end in `?`. The Clarity1 spelling is left as an alias in Clarity2 for backwards compatibility.
+
+
+**Example:**
 
 ```
 (element-at? "blockstack" u5) ;; Returns (some "s")
@@ -970,105 +1076,122 @@ The `element-at?` function returns the element at `index` in the provided sequen
 (element-at? 0xfb01 u1) ;; Returns (some 0x01)
 ```
 
-## err​
+## err
 
 Introduced in: **Clarity 1**
 
-**input:** `A`
+**Input:** `A`
 
-**output:** `(response A B)`
+**Output:** `(response A B)`
 
-**signature:** `(err value)`
+**Signature:** `(err value)`
 
-**description:**
+**Description:**
 
-The `err` function constructs a response type from the input value. Use `err` for creating return values in public functions. An _err_ value indicates that any database changes during the processing of the function should be rolled back.
+The `err` function constructs a response type from the input value. Use `err` for
+creating return values in public functions. An _err_ value indicates that any database changes during
+the processing of the function should be rolled back.
 
-**example:**
+**Example:**
 
 ```
 (err true) ;; Returns (err true)
 ```
 
-## filter​
+## filter
 
 Introduced in: **Clarity 1**
 
-**input:** `Function(A) -> bool, sequence_A`
+**Input:** `Function(A) -> bool, sequence_A`
 
-**output:** `sequence_A`
+**Output:** `sequence_A`
 
-**signature:** `(filter func sequence)`
+**Signature:** `(filter func sequence)`
 
-**description:**
+**Description:**
 
-The `filter` function applies the input function `func` to each element of the input sequence, and returns the same sequence with any elements removed for which `func` returned `false`. Applicable sequence types are `(list A)`, `buff`, `string-ascii` and `string-utf8`, for which the corresponding element types are, respectively, `A`, `(buff 1)`, `(string-ascii 1)` and `(string-utf8 1)`. The `func` argument must be a literal function name.
+The `filter` function applies the input function `func` to each element of the
+input sequence, and returns the same sequence with any elements removed for which `func` returned `false`.
+Applicable sequence types are `(list A)`, `buff`, `string-ascii` and `string-utf8`,
+for which the corresponding element types are, respectively, `A`, `(buff 1)`, `(string-ascii 1)` and `(string-utf8 1)`.
+The `func` argument must be a literal function name.
 
-**example:**
+
+**Example:**
 
 ```
 (filter not (list true false true false)) ;; Returns (false false)
-(define-private (is-a (char (string-utf8 1))) 
-  (is-eq char u"a"))
+(define-private (is-a (char (string-utf8 1))) (is-eq char u"a"))
 (filter is-a u"acabd") ;; Returns u"aa"
-(define-private (is-zero (char (buff 1)))
-  (is-eq char 0x00))
+(define-private (is-zero (char (buff 1))) (is-eq char 0x00))
 (filter is-zero 0x00010002) ;; Returns 0x0000
 ```
 
-## fold​
+## fold
 
 Introduced in: **Clarity 1**
 
-**input:** `Function(A, B) -> B, sequence_A, B`
+**Input:** `Function(A, B) -> B, sequence_A, B`
 
-**output:** `B`
+**Output:** `B`
 
-**signature:** `(fold func sequence_A initial_B)`
+**Signature:** `(fold func sequence_A initial_B)`
 
-**description:**
+**Description:**
 
-The `fold` function condenses `sequence_A` into a value of type `B` by recursively applies the function `func` to each element of the input sequence _and_ the output of a previous application of `func`.
+The `fold` function condenses `sequence_A` into a value of type
+`B` by recursively applies the function `func` to each element of the
+input sequence _and_ the output of a previous application of `func`.
 
-`fold` uses `initial_B` in the initial application of `func`, along with the first element of `sequence_A`. The resulting value of type `B` is used for the next application of `func`, along with the next element of `sequence_A` and so on. `fold` returns the last value of type `B` returned by these successive applications `func`.
+`fold` uses `initial_B` in the initial application of `func`, along with the
+first element of `sequence_A`. The resulting value of type `B` is used for the
+next application of `func`, along with the next element of `sequence_A` and so
+on. `fold` returns the last value of type `B` returned by these successive
+applications `func`.
 
-Applicable sequence types are `(list A)`, `buff`, `string-ascii` and `string-utf8`, for which the corresponding element types are, respectively, `A`, `(buff 1)`, `(string-ascii 1)` and `(string-utf8 1)`. The `func` argument must be a literal function name.
+Applicable sequence types are `(list A)`, `buff`, `string-ascii` and `string-utf8`,
+for which the corresponding element types are, respectively, `A`, `(buff 1)`, `(string-ascii 1)` and `(string-utf8 1)`.
+The `func` argument must be a literal function name.
 
-**example:**
+
+**Example:**
 
 ```
 (fold * (list 2 2 2) 1) ;; Returns 8
 (fold * (list 2 2 2) 0) ;; Returns 0
 ;; calculates (- 11 (- 7 (- 3 2)))
 (fold - (list 3 7 11) 2) ;; Returns 5 
-(define-private (concat-string (a (string-ascii 20)) (b (string-ascii 20))) 
-  (unwrap-panic (as-max-len? (concat a b) u20)))
+(define-private (concat-string (a (string-ascii 20)) (b (string-ascii 20))) (unwrap-panic (as-max-len? (concat a b) u20)))
 (fold concat-string "cdef" "ab")   ;; Returns "fedcab"
 (fold concat-string (list "cd" "ef") "ab")   ;; Returns "efcdab"
-(define-private (concat-buff (a (buff 20)) (b (buff 20)))
-  (unwrap-panic (as-max-len? (concat a b) u20)))
+(define-private (concat-buff (a (buff 20)) (b (buff 20))) (unwrap-panic (as-max-len? (concat a b) u20)))
 (fold concat-buff 0x03040506 0x0102)   ;; Returns 0x060504030102
 ```
 
-## from-consensus-buff?​
+## from-consensus-buff?
 
 Introduced in: **Clarity 2**
 
-**input:** `type-signature(t), buff`
+**Input:** `type-signature(t), buff`
 
-**output:** `(optional t)`
+**Output:** `(optional t)`
 
-**signature:** `(from-consensus-buff? type-signature buffer)`
+**Signature:** `(from-consensus-buff? type-signature buffer)`
 
-**description:**
+**Description:**
 
-`from-consensus-buff?` is a special function that will deserialize a buffer into a Clarity value, using the SIP-005 serialization of the Clarity value. The type that `from-consensus-buff?` tries to deserialize into is provided by the first parameter to the function. If it fails to deserialize the type, the method returns `none`.
+`from-consensus-buff?` is a special function that will deserialize a
+buffer into a Clarity value, using the SIP-005 serialization of the
+Clarity value. The type that `from-consensus-buff?` tries to deserialize
+into is provided by the first parameter to the function. If it fails
+to deserialize the type, the method returns `none`.
 
-**example:**
+
+**Example:**
 
 ```
 (from-consensus-buff? int 0x0000000000000000000000000000000001) ;; Returns (some 1)
-(from-consensus-buff? uint 0x0000000000000000000000000000000001) ;; Returns none 
+(from-consensus-buff? uint 0x0000000000000000000000000000000001) ;; Returns none
 (from-consensus-buff? uint 0x0100000000000000000000000000000001) ;; Returns (some u1)
 (from-consensus-buff? bool 0x0000000000000000000000000000000001) ;; Returns none
 (from-consensus-buff? bool 0x03) ;; Returns (some true)
@@ -1077,25 +1200,28 @@ Introduced in: **Clarity 2**
 (from-consensus-buff? { abc: int, def: int } 0x0c00000002036162630000000000000000000000000000000003036465660000000000000000000000000000000004) ;; Returns (some (tuple (abc 3) (def 4)))
 ```
 
-## ft-burn?​
+## ft-burn?
 
 Introduced in: **Clarity 1**
 
-**input:** `TokenName, uint, principal`
+**Input:** `TokenName, uint, principal`
 
-**output:** `(response bool uint)`
+**Output:** `(response bool uint)`
 
-**signature:** `(ft-burn? token-name amount sender)`
+**Signature:** `(ft-burn? token-name amount sender)`
 
-**description:**
+**Description:**
 
-`ft-burn?` is used to decrease the token balance for the `sender` principal for a token type defined using `define-fungible-token`. The decreased token balance is _not_ transferred to another principal, but rather destroyed, reducing the circulating supply.
+`ft-burn?` is used to decrease the token balance for the `sender` principal for a token
+type defined using `define-fungible-token`. The decreased token balance is _not_ transfered to another principal, but
+rather destroyed, reducing the circulating supply.  
 
-On a successful burn, it returns `(ok true)`. In the event of an unsuccessful burn it returns one of the following error codes:
+On a successful burn, it returns `(ok true)`. The burn may fail with error code:
 
-`(err u1)` -- `sender` does not have enough balance to burn this amount or the amount specified is not positive
+* `(err u1)` -- `sender` does not have enough balance to burn this amount or the amount specified is not positive
 
-**example:**
+
+**Example:**
 
 ```
 (define-fungible-token stackaroo)
@@ -1103,21 +1229,22 @@ On a successful burn, it returns `(ok true)`. In the event of an unsuccessful bu
 (ft-burn? stackaroo u50 'SPAXYA5XS51713FDTQ8H94EJ4V579CXMTRNBZKSF) ;; Returns (ok true)
 ```
 
-## ft-get-balance​
+## ft-get-balance
 
 Introduced in: **Clarity 1**
 
-**input:** `TokenName, principal`
+**Input:** `TokenName, principal`
 
-**output:** `uint`
+**Output:** `uint`
 
-**signature:** `(ft-get-balance token-name principal)`
+**Signature:** `(ft-get-balance token-name principal)`
 
-**description:**
+**Description:**
 
-`ft-get-balance` returns `token-name` balance of the principal `principal`. The token type must have been defined using `define-fungible-token`.
+`ft-get-balance` returns `token-name` balance of the principal `principal`.
+The token type must have been defined using `define-fungible-token`.
 
-**example:**
+**Example:**
 
 ```
 (define-fungible-token stackaroo)
@@ -1125,21 +1252,22 @@ Introduced in: **Clarity 1**
 (ft-get-balance stackaroo 'SZ2J6ZY48GV1EZ5V2V5RB9MP66SW86PYKKQ9H6DPR) ;; Returns u100
 ```
 
-## ft-get-supply​
+## ft-get-supply
 
 Introduced in: **Clarity 1**
 
-**input:** `TokenName`
+**Input:** `TokenName`
 
-**output:** `uint`
+**Output:** `uint`
 
-**signature:** `(ft-get-supply token-name)`
+**Signature:** `(ft-get-supply token-name)`
 
-**description:**
+**Description:**
 
-`ft-get-balance` returns `token-name` circulating supply. The token type must have been defined using `define-fungible-token`.
+`ft-get-balance` returns `token-name` circulating supply.
+The token type must have been defined using `define-fungible-token`.
 
-**example:**
+**Example:**
 
 ```
 (define-fungible-token stackaroo)
@@ -1147,48 +1275,59 @@ Introduced in: **Clarity 1**
 (ft-get-supply stackaroo) ;; Returns u100
 ```
 
-## ft-mint?​
+## ft-mint?
 
 Introduced in: **Clarity 1**
 
-**input:** `TokenName, uint, principal`
+**Input:** `TokenName, uint, principal`
 
-**output:** `(response bool uint)`
+**Output:** `(response bool uint)`
 
-**signature:** `(ft-mint? token-name amount recipient)`
+**Signature:** `(ft-mint? token-name amount recipient)`
 
-**description:**
+**Description:**
 
-`ft-mint?` is used to increase the token balance for the `recipient` principal for a token type defined using `define-fungible-token`. The increased token balance is _not_ transfered from another principal, but rather minted.
+`ft-mint?` is used to increase the token balance for the `recipient` principal for a token
+type defined using `define-fungible-token`. The increased token balance is _not_ transfered from another principal, but
+rather minted.  
 
-If a non-positive amount is provided to mint, this function returns `(err 1)`. Otherwise, on successfully mint, it returns `(ok true)`.
+If a non-positive amount is provided to mint, this function returns `(err 1)`. Otherwise, on successfully mint, it
+returns `(ok true)`. If this call would result in more supplied tokens than defined by the total supply in 
+`define-fungible-token`, then a `SupplyOverflow` runtime error is thrown.
 
-**example:**
+
+**Example:**
 
 ```
 (define-fungible-token stackaroo)
 (ft-mint? stackaroo u100 'SPAXYA5XS51713FDTQ8H94EJ4V579CXMTRNBZKSF) ;; Returns (ok true)
 ```
 
-## ft-transfer?​
+## ft-transfer?
 
 Introduced in: **Clarity 1**
 
-**input:** `TokenName, uint, principal, principal`
+**Input:** `TokenName, uint, principal, principal`
 
-**output:** `(response bool uint)`
+**Output:** `(response bool uint)`
 
-**signature:** `(ft-transfer? token-name amount sender recipient)`
+**Signature:** `(ft-transfer? token-name amount sender recipient)`
 
-**description:**
+**Description:**
 
-`ft-transfer?` is used to increase the token balance for the `recipient` principal for a token type defined using `define-fungible-token` by debiting the `sender` principal. In contrast to `stx-transfer?`, any user can transfer the assets. When used, relevant guards need to be added.
+`ft-transfer?` is used to increase the token balance for the `recipient` principal for a token
+type defined using `define-fungible-token` by debiting the `sender` principal. In contrast to `stx-transfer?`, 
+any user can transfer the assets. When used, relevant guards need to be added.
 
-This function returns (ok true) if the transfer is successful. In the event of an unsuccessful transfer it returns one of the following error codes:
+This function returns (ok true) if the transfer is successful. In the event of an unsuccessful transfer it returns
+one of the following error codes:
 
-`(err u1)` -- `sender` does not have enough balance to transfer `(err u2)` -- `sender` and `recipient` are the same principal `(err u3)` -- amount to send is non-positive
+* `(err u1)` -- `sender` does not have enough balance to transfer
+* `(err u2)` -- `sender` and `recipient` are the same principal
+* `(err u3)` -- amount to send is non-positive
 
-**example:**
+
+**Example:**
 
 ```
 (define-fungible-token stackaroo)
@@ -1197,21 +1336,23 @@ This function returns (ok true) if the transfer is successful. In the event of a
 (ft-transfer? stackaroo u60 'SZ2J6ZY48GV1EZ5V2V5RB9MP66SW86PYKKQ9H6DPR 'SPAXYA5XS51713FDTQ8H94EJ4V579CXMTRNBZKSF) ;; Returns (err u1)
 ```
 
-## get​
+## get
 
 Introduced in: **Clarity 1**
 
-**input:** `KeyName, (tuple) | (optional (tuple))`
+**Input:** `KeyName, (tuple) | (optional (tuple))`
 
-**output:** `A`
+**Output:** `A`
 
-**signature:** `(get key-name tuple)`
+**Signature:** `(get key-name tuple)`
 
-**description:**
+**Description:**
 
-The `get` function fetches the value associated with a given key from the supplied typed tuple. If an `Optional` value is supplied as the inputted tuple, `get` returns an `Optional` type of the specified key in the tuple. If the supplied option is a `(none)` option, get returns `(none)`.
+The `get` function fetches the value associated with a given key from the supplied typed tuple.
+If an `Optional` value is supplied as the inputted tuple, `get` returns an `Optional` type of the specified key in
+the tuple. If the supplied option is a `none` option, get returns `none`.
 
-**example:**
+**Example:**
 
 ```
 (define-map names-map { name: (string-ascii 12) } { id: int })
@@ -1221,95 +1362,147 @@ The `get` function fetches the value associated with a given key from the suppli
 (get id (map-get? names-map (tuple (name "non-existent")))) ;; Returns none
 ```
 
-## get-block-info?​
+## get-block-info?
 
 Introduced in: **Clarity 1**
 
-**input:** `BlockInfoPropertyName, uint`
+Removed in: **Clarity 2**
 
-**output:** `(optional buff) | (optional uint)`
+**Input:** `BlockInfoPropertyName, uint`
 
-**signature:** `(get-block-info? prop-name block-height)`
+**Output:** `(optional buff) | (optional uint)`
 
-**description:** In Clarity 3, `get-block-info?` is removed. In its place, `get-stacks-block-info?` can be used to retrieve information about a Stacks block and `get-tenure-info?` can be used to get information pertaining to the tenure. The `get-block-info?` function fetches data for a block of the given _Stacks_ block height. The value and type returned are determined by the specified `BlockInfoPropertyName`. If the provided `block-height` does not correspond to an existing block prior to the current block, the function returns `none`. The currently available property names are as follows:
+**Signature:** `(get-block-info? prop-name block-height)`
 
-* `burnchain-header-hash`: This property returns a `(buff 32)` value containing the header hash of the burnchain (Bitcoin) block that selected the Stacks block at the given Stacks chain height.
-* `id-header-hash`: This property returns a `(buff 32)` value containing the _index block hash_ of a Stacks block. This hash is globally unique, and is derived from the block hash and the history of accepted PoX operations. This is also the block hash value you would pass into `(at-block)`.
-* `header-hash`: This property returns a `(buff 32)` value containing the header hash of a Stacks block, given a Stacks chain height. \*_WARNING_ this hash is not guaranteed to be globally unique, since the same Stacks block can be mined in different PoX forks. If you need global uniqueness, you should use `id-header-hash`.
-* `miner-address`: This property returns a `principal` value corresponding to the miner of the given block. **WARNING** In Stacks 2.1, this is not guaranteed to be the same `principal` that received the block reward, since Stacks 2.1 supports coinbase transactions that pay the reward to a contract address. This is merely the address of the `principal` that produced the block.
-* `time`: This property returns a `uint` value of the block header time field. This is a Unix epoch timestamp in seconds which roughly corresponds to when the block was mined. This timestamp comes from the burnchain block. **Note**: this does not increase monotonically with each block and block times are accurate only to within two hours. See [BIP113](https://github.com/bitcoin/bips/blob/master/bip-0113.mediawiki) for more information. For blocks mined after epoch 3.0, all Stacks blocks in one tenure will share the same timestamp. To get the Stacks block time for a block in epoch 3.0+, use `get-stacks-block-info?`.
-* `vrf-seed`: This property returns a `(buff 32)` value of the VRF seed for the corresponding block.
-* `block-reward`: This property returns a `uint` value for the total block reward of the indicated Stacks block. This value is only available once the reward for the block matures. That is, the latest `block-reward` value available is at least 101 Stacks blocks in the past (on mainnet). The reward includes the coinbase, the anchored block's transaction fees, and the shares of the confirmed and produced microblock transaction fees earned by this block's miner. Note that this value may be smaller than the Stacks coinbase at this height, because the miner may have been punished with a valid `PoisonMicroblock` transaction in the event that the miner published two or more microblock stream forks. Added in Clarity 2.
-* `miner-spend-total`: This property returns a `uint` value for the total number of burnchain tokens (i.e. satoshis) spent by all miners trying to win this block. Added in Clarity 2.
-* `miner-spend-winner`: This property returns a `uint` value for the number of burnchain tokens (i.e. satoshis) spent by the winning miner for this Stacks block. Note that this value is less than or equal to the value for `miner-spend-total` at the same block height. Added in Clarity 2.
+**Description:**
 
-**example:**
+In Clarity 3, `get-block-info?` is removed. In its place, `get-stacks-block-info?` can be used to retrieve
+information about a Stacks block and `get-tenure-info?` can be used to get information pertaining to the tenure.
+
+The `get-block-info?` function fetches data for a block of the given *Stacks* block height. The
+value and type returned are determined by the specified `BlockInfoPropertyName`. If the provided `block-height` does
+not correspond to an existing block prior to the current block, the function returns `none`. The currently available property names
+are as follows:
+
+- `burnchain-header-hash`: This property returns a `(buff 32)` value containing the header hash of the burnchain (Bitcoin) block that selected the 
+Stacks block at the given Stacks chain height.
+
+- `id-header-hash`: This property returns a `(buff 32)` value containing the _index block hash_ of a Stacks block.   This hash is globally unique, and is derived
+from the block hash and the history of accepted PoX operations.  This is also the block hash value you would pass into `(at-block)`.
+
+- `header-hash`: This property returns a `(buff 32)` value containing the header hash of a Stacks block, given a Stacks chain height.  **WARNING* this hash is
+not guaranteed to be globally unique, since the same Stacks block can be mined in different PoX forks.  If you need global uniqueness, you should use `id-header-hash`.
+
+- `miner-address`: This property returns a `principal` value corresponding to the miner of the given block.  **WARNING** In Stacks 2.1, this is not guaranteed to 
+be the same `principal` that received the block reward, since Stacks 2.1 supports coinbase transactions that pay the reward to a contract address.  This is merely
+the address of the `principal` that produced the block.
+
+- `time`: This property returns a `uint` value of the block header time field. This is a Unix epoch timestamp in seconds
+which roughly corresponds to when the block was mined. This timestamp comes from the burnchain block. **Note**: this does not increase monotonically with each block
+and block times are accurate only to within two hours. See [BIP113](https://github.com/bitcoin/bips/blob/master/bip-0113.mediawiki) for more information.
+For blocks mined after epoch 3.0, all Stacks blocks in one tenure will share the same timestamp. To get the Stacks block time for a block in epoch 3.0+, use `get-stacks-block-info?`.
+
+- `vrf-seed`: This property returns a `(buff 32)` value of the VRF seed for the corresponding block.
+
+- `block-reward`: This property returns a `uint` value for the total block reward of the indicated Stacks block.  This value is only available once the reward for 
+the block matures.  That is, the latest `block-reward` value available is at least 101 Stacks blocks in the past (on mainnet).  The reward includes the coinbase,
+the anchored block's transaction fees, and the shares of the confirmed and produced microblock transaction fees earned by this block's miner.  Note that this value may 
+be smaller than the Stacks coinbase at this height, because the miner may have been punished with a valid `PoisonMicroblock` transaction in the event that the miner
+published two or more microblock stream forks. Added in Clarity 2.
+
+- `miner-spend-total`: This property returns a `uint` value for the total number of burnchain tokens (i.e. satoshis) spent by all miners trying to win this block. Added in Clarity 2.
+
+- `miner-spend-winner`: This property returns a `uint` value for the number of burnchain tokens (i.e. satoshis) spent by the winning miner for this Stacks block.  Note that
+this value is less than or equal to the value for `miner-spend-total` at the same block height. Added in Clarity 2.
+
+
+**Example:**
 
 ```
-(get-block-info? time u0) ;; Returns (some u1557860301) 
+(get-block-info? time u0) ;; Returns (some u1557860301)
 (get-block-info? header-hash u0) ;; Returns (some 0x374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb)
 (get-block-info? vrf-seed u0) ;; Returns (some 0xf490de2920c8a35fabeb13208852aa28c76f9be9b03a4dd2b3c075f7a26923b4)
 ```
 
-## get-burn-block-info?​
+## get-burn-block-info?
 
 Introduced in: **Clarity 2**
 
-**input:** `BurnBlockInfoPropertyName, uint`
+**Input:** `BurnBlockInfoPropertyName, uint`
 
-**output:** `(optional buff) | (optional (tuple (addrs (list 2 (tuple (hashbytes (buff 32)) (version (buff 1))))) (payout uint)))`
+**Output:** `(optional buff) | (optional (tuple (addrs (list 2 (tuple (hashbytes (buff 32)) (version (buff 1))))) (payout uint)))`
 
-**signature:** `(get-burn-block-info? prop-name block-height)`
+**Signature:** `(get-burn-block-info? prop-name burn-block-height)`
 
-**description:**
+**Description:**
 
-The `get-burn-block-info?` function fetches data for a block of the given _burnchain_ block height. The value and type returned are determined by the specified `BlockInfoPropertyName`. Valid values for `block-height` only include heights between the burnchain height at the time the Stacks chain was launched, and the last-processed burnchain block. If the `block-height` argument falls outside of this range, then `none` shall be returned.
+The `get-burn-block-info?` function fetches data for a block of the given *burnchain* block height. The
+value and type returned are determined by the specified `BlockInfoPropertyName`.  Valid values for `burn-block-height` only
+include heights between the burnchain height at the time the Stacks chain was launched, and the last-processed burnchain
+block.  If the `burn-block-height` argument falls outside of this range, then `none` shall be returned.
 
 The following `BlockInfoPropertyName` values are defined:
 
-* The `header-hash` property returns a 32-byte buffer representing the header hash of the burnchain block at burnchain height `block-height`.
-* The `pox-addrs` property returns a tuple with two items: a list of up to two PoX addresses that received a PoX payout at that block height, and the amount of burnchain tokens paid to each address (note that per the blockchain consensus rules, each PoX payout will be the same for each address in the block-commit transaction). The list will include burn addresses -- that is, the unspendable addresses that miners pay to when there are no PoX addresses left to be paid. During the prepare phase, there will be exactly one burn address reported. During the reward phase, up to two burn addresses may be reported in the event that some PoX reward slots are not claimed.
+* The `header-hash` property returns a 32-byte buffer representing the header hash of the burnchain block at
+burnchain height `burn-block-height`.
+
+* The `pox-addrs` property returns a tuple with two items: a list of up to two PoX addresses that received a PoX payout at that block height, and the amount of burnchain
+tokens paid to each address (note that per the blockchain consensus rules, each PoX payout will be the same for each address in the block-commit transaction).
+The list will include burn addresses -- that is, the unspendable addresses that miners pay to when there are no PoX addresses left to be paid.  During the prepare phase,
+there will be exactly one burn address reported. During the reward phase, up to two burn addresses may be reported in the event that some PoX reward slots are not claimed.
 
 The `addrs` list contains the same PoX address values passed into the PoX smart contract:
+   * They each have type signature `(tuple (hashbytes (buff 32)) (version (buff 1)))`
+   * The `version` field can be any of the following:
+      * `0x00` means this is a p2pkh address, and `hashbytes` is the 20-byte hash160 of a single public key
+      * `0x01` means this is a p2sh address, and `hashbytes` is the 20-byte hash160 of a redeemScript script
+      * `0x02` means this is a p2wpkh-p2sh address, and `hashbytes` is the 20-byte hash160 of a p2wpkh witness script
+      * `0x03` means this is a p2wsh-p2sh address, and `hashbytes` is the 20-byte hash160 of a p2wsh witness script
+      * `0x04` means this is a p2wpkh address, and `hashbytes` is the 20-byte hash160 of the witness script
+      * `0x05` means this is a p2wsh address, and `hashbytes` is the 32-byte sha256 of the witness script
+      * `0x06` means this is a p2tr address, and `hashbytes` is the 32-byte sha256 of the witness script
 
-* They each have type signature `(tuple (hashbytes (buff 32)) (version (buff 1)))`
-* The `version` field can be any of the following:
-  * `0x00` means this is a p2pkh address, and `hashbytes` is the 20-byte hash160 of a single public key
-  * `0x01` means this is a p2sh address, and `hashbytes` is the 20-byte hash160 of a redeemScript script
-  * `0x02` means this is a p2wpkh-p2sh address, and `hashbytes` is the 20-byte hash160 of a p2wpkh witness script
-  * `0x03` means this is a p2wsh-p2sh address, and `hashbytes` is the 20-byte hash160 of a p2wsh witness script
-  * `0x04` means this is a p2wpkh address, and `hashbytes` is the 20-byte hash160 of the witness script
-  * `0x05` means this is a p2wsh address, and `hashbytes` is the 32-byte sha256 of the witness script
-  * `0x06` means this is a p2tr address, and `hashbytes` is the 32-byte sha256 of the witness script
 
-**example:**
+**Example:**
 
 ```
 (get-burn-block-info? header-hash u677050) ;; Returns (some 0xe67141016c88a7f1203eca0b4312f2ed141531f59303a1c267d7d83ab6b977d8)
-(get-burn-block-info? pox-addrs u677050) ;; Returns (some (tuple (addrs ( (tuple (hashbytes 0x395f3643cea07ec4eec73b4d9a973dcce56b9bf1) (version 0x00)) (tuple (hashbytes 0x7c6775e20e3e938d2d7e9d79ac310108ba501ddb) (version 0x01)))) (payout u123)))
+(get-burn-block-info? pox-addrs u677050) ;; Returns (some (tuple (addrs ((tuple (hashbytes 0x395f3643cea07ec4eec73b4d9a973dcce56b9bf1) (version 0x00)) (tuple (hashbytes 0x7c6775e20e3e938d2d7e9d79ac310108ba501ddb) (version 0x01)))) (payout u123)))
 ```
 
 ## get-stacks-block-info?
 
 Introduced in: **Clarity 3**
 
-**input:** `StacksBlockInfoPropertyName, uint`
+**Input:** `StacksBlockInfoPropertyName, uint`
 
-**output:** `(optional buff), (optional uint)`
+**Output:** `(optional buff) | (optional uint)`
 
-**signature:** `(get-stacks-block-info? prop-name stacks-block-height)`
+**Signature:** `(get-stacks-block-info? prop-name stacks-block-height)`
 
-**description:**
+**Description:**
 
-The `get-stacks-block-info?` function fetches data for a block of the given _Stacks_ block height. The value and type returned are determined by the specified `StacksBlockInfoPropertyName`. If the provided `stacks-block-height` does not correspond to an existing block prior to the current block, the function returns `none`. The currently available property names are as follows:
+The `get-stacks-block-info?` function fetches data for a block of the given *Stacks* block height. The
+value and type returned are determined by the specified `StacksBlockInfoPropertyName`. If the provided `stacks-block-height` does
+not correspond to an existing block prior to the current block, the function returns `none`. The currently available property names
+are as follows:
 
-* `id-header-hash`: This property returns a `(buff 32)` value containing the _index block hash_ of a Stacks block. This hash is globally unique, and is derived from the block hash and the history of accepted PoX operations. This is also the block hash value you would pass into `(at-block)`.
-* `header-hash`: This property returns a `(buff 32)` value containing the header hash of a Stacks block, given a Stacks chain height. **WARNING** this hash is not guaranteed to be globally unique, since the same Stacks block can be mined in different PoX forks. If you need global uniqueness, you should use `id-header-hash`.
-* `time`: This property returns a `uint` value of the block header time field. This is a Unix epoch timestamp in seconds which roughly corresponds to when the block was mined. For a block mined before epoch 3.0, this timestamp comes from the burnchain block. **Note**: this does not increase monotonically with each block and block times are accurate only to within two hours. See [BIP113](https://github.com/bitcoin/bips/blob/master/bip-0113.mediawiki) for more information. For a block mined after epoch 3.0, this timestamp comes from the Stacks block header. **Note**: this is the time, according to the miner, when the mining of this block started, but is not guaranteed to be accurate. This time will be validated by the signers to be:
-* Greater than the timestamp of the previous block
-* At most 15 seconds into the future (according to their own local clocks)
+- `id-header-hash`: This property returns a `(buff 32)` value containing the _index block hash_ of a Stacks block.   This hash is globally unique, and is derived
+from the block hash and the history of accepted PoX operations.  This is also the block hash value you would pass into `(at-block)`.
 
-**example:**
+- `header-hash`: This property returns a `(buff 32)` value containing the header hash of a Stacks block, given a Stacks chain height.  **WARNING* this hash is
+not guaranteed to be globally unique, since the same Stacks block can be mined in different PoX forks.  If you need global uniqueness, you should use `id-header-hash`.
+
+- `time`: This property returns a `uint` value of the block header time field. This is a Unix epoch timestamp in seconds
+which roughly corresponds to when the block was mined. For a block mined before epoch 3.0, this timestamp comes from the burnchain block. **Note**: this does not increase monotonically with each block
+and block times are accurate only to within two hours. See [BIP113](https://github.com/bitcoin/bips/blob/master/bip-0113.mediawiki) for more information.
+For a block mined after epoch 3.0, this timestamp comes from the Stacks block header. **Note**: this is the time, according to the miner, when
+the mining of this block started, but is not guaranteed to be accurate. This time will be validated by the signers to be:
+  - Greater than the timestamp of the previous block
+  - At most 15 seconds into the future (according to their own local clocks)
+
+
+**Example:**
 
 ```
 (get-stacks-block-info? time u0) ;; Returns (some u1557860301)
@@ -1320,139 +1513,153 @@ The `get-stacks-block-info?` function fetches data for a block of the given _Sta
 
 Introduced in: **Clarity 3**
 
-**input:** `TenureInfoPropertyName, uint`
+**Input:** `TenureInfoPropertyName, uint`
 
-**output:** `(optional buff) | (optional uint)`
+**Output:** `(optional buff) | (optional uint)`
 
-**signature:** `(get-tenure-info? prop-name stacks-block-height)`
+**Signature:** `(get-tenure-info? prop-name stacks-block-height)`
 
-**description:**
+**Description:**
 
-The `get-tenure-info?` function fetches data for the tenure at the given block height. The value and type returned are determined by the specified `TenureInfoPropertyName`. If the provided `stacks-block-height` does not correspond to an existing block prior to the current block, the function returns `none`. The currently available property names are as follows:
+The `get-tenure-info?` function fetches data for the tenure at the given block height. The
+value and type returned are determined by the specified `TenureInfoPropertyName`. If the provided `stacks-block-height` does
+not correspond to an existing block prior to the current block, the function returns `none`. The currently available property names
+are as follows:
 
-* `burnchain-header-hash`: This property returns a `(buff 32)` value containing the header hash of the burnchain (Bitcoin) block that selected the tenure at the given height.
-* `miner-address`: This property returns a `principal` value corresponding to the miner of the given tenure. **WARNING** This is not guaranteed to be the same `principal` that received the block reward, since Stacks 2.1+ supports coinbase transactions that pay the reward to a contract address. This is merely the address of the `principal` that produced the tenure.
-* `time`: This property returns a `uint` Unix epoch timestamp in seconds which roughly corresponds to when the tenure was started. This timestamp comes from the burnchain block. **Note**: this does not increase monotonically with each tenure and tenure times are accurate only to within two hours. See [BIP113](https://github.com/bitcoin/bips/blob/master/bip-0113.mediawiki) for more information.
-* `vrf-seed`: This property returns a `(buff 32)` value of the VRF seed for the corresponding tenure.
-* `block-reward`: This property returns a `uint` value for the total block reward of the indicated tenure. This value is only available once the reward for the tenure matures. That is, the latest `block-reward` value available is at least 101 Stacks blocks in the past (on mainnet). The reward includes the coinbase, the anchored tenure's transaction fees, and the shares of the confirmed and produced microblock transaction fees earned by this block's miner. Note that this value may be smaller than the Stacks coinbase at this height, because the miner may have been punished with a valid `PoisonMicroblock` transaction in the event that the miner published two or more microblock stream forks.
-* `miner-spend-total`: This property returns a `uint` value for the total number of burnchain tokens (i.e. satoshis) spent by all miners trying to win this tenure.
-* `miner-spend-winner`: This property returns a `uint` value for the number of burnchain tokens (i.e. satoshis) spent by the winning miner for this tennure. Note that this value is less than or equal to the value for `miner-spend-total` at the same tenure height.
+- `burnchain-header-hash`: This property returns a `(buff 32)` value containing the header hash of the burnchain (Bitcoin) block that selected the
+tenure at the given height.
 
-**example:**
+- `miner-address`: This property returns a `principal` value corresponding to the miner of the given tenure.  **WARNING** This is not guaranteed to
+be the same `principal` that received the block reward, since Stacks 2.1+ supports coinbase transactions that pay the reward to a contract address.  This is merely
+the address of the `principal` that produced the tenure.
+
+- `time`: This property returns a `uint` Unix epoch timestamp in seconds which roughly corresponds to when the tenure was started. This timestamp comes
+from the burnchain block. **Note**: this does not increase monotonically with each tenure and tenure times are accurate only to within two hours. See
+[BIP113](https://github.com/bitcoin/bips/blob/master/bip-0113.mediawiki) for more information.
+
+- `vrf-seed`: This property returns a `(buff 32)` value of the VRF seed for the corresponding tenure.
+
+- `block-reward`: This property returns a `uint` value for the total block reward of the indicated tenure.  This value is only available once the reward for
+the tenure matures.  That is, the latest `block-reward` value available is at least 101 Stacks blocks in the past (on mainnet).  The reward includes the coinbase,
+the anchored tenure's transaction fees, and the shares of the confirmed and produced microblock transaction fees earned by this block's miner.  Note that this value may
+be smaller than the Stacks coinbase at this height, because the miner may have been punished with a valid `PoisonMicroblock` transaction in the event that the miner
+published two or more microblock stream forks.
+
+- `miner-spend-total`: This property returns a `uint` value for the total number of burnchain tokens (i.e. satoshis) spent by all miners trying to win this tenure.
+
+- `miner-spend-winner`: This property returns a `uint` value for the number of burnchain tokens (i.e. satoshis) spent by the winning miner for this tennure.  Note that
+this value is less than or equal to the value for `miner-spend-total` at the same tenure height.
+
+
+**Example:**
 
 ```
 (get-tenure-info? time u0) ;; Returns (some u1557860301)
 (get-tenure-info? vrf-seed u0) ;; Returns (some 0xf490de2920c8a35fabeb13208852aa28c76f9be9b03a4dd2b3c075f7a26923b4)
 ```
 
-## hash160​
+## hash160
 
 Introduced in: **Clarity 1**
 
-**input:** `buff|uint|int`
+**Input:** `buff|uint|int`
 
-**output:** `(buff 20)`
+**Output:** `(buff 20)`
 
-**signature:** `(hash160 value)`
+**Signature:** `(hash160 value)`
 
-**description:**
+**Description:**
 
-The `hash160` function computes `RIPEMD160(SHA256(x))` of the inputted value. If an integer (128 bit) is supplied the hash is computed over the little-endian representation of the integer.
+The `hash160` function computes `RIPEMD160(SHA256(x))` of the inputted value.
+If an integer (128 bit) is supplied the hash is computed over the little-endian representation of the
+integer.
 
-**example:**
+**Example:**
 
 ```
 (hash160 0) ;; Returns 0xe4352f72356db555721651aa612e00379167b30f
 ```
 
-## if​
+## if
 
 Introduced in: **Clarity 1**
 
-**input:** `bool, A, A`
+**Input:** `bool, A, A`
 
-**output:** `A`
+**Output:** `A`
 
-**signature:** `(if bool1 expr1 expr2)`
+**Signature:** `(if bool1 expr1 expr2)`
 
-**description:**
+**Description:**
 
-The `if` function admits a boolean argument and two expressions which must return the same type. In the case that the boolean input is `true`, the `if` function evaluates and returns `expr1`. If the boolean input is `false`, the `if` function evaluates and returns `expr2`.
+The `if` function admits a boolean argument and two expressions
+which must return the same type. In the case that the boolean input is `true`, the
+`if` function evaluates and returns `expr1`. If the boolean input is `false`, the
+`if` function evaluates and returns `expr2`.
 
-**example:**
+**Example:**
 
 ```
 (if true 1 2) ;; Returns 1
 (if (> 1 2) 1 2) ;; Returns 2
 ```
 
-## impl-trait​
+## impl-trait
 
 Introduced in: **Clarity 1**
 
-**input:** `TraitIdentifier`
+**Input:** `TraitIdentifier`
 
-**output:** `Not Applicable`
+**Output:** `Not Applicable`
 
-**signature:** `(impl-trait trait-identifier)`
+**Signature:** `(impl-trait trait-identifier)`
 
-**description:**
+**Description:**
 
-`impl-trait` can be use for asserting that a contract is fully implementing a given trait. Additional checks are being performed when the contract is being published, rejecting the deployment if the contract is violating the trait specification.
+`impl-trait` can be use for asserting that a contract is fully implementing a given trait.
+Additional checks are being performed when the contract is being published, rejecting the deployment if the
+contract is violating the trait specification.
 
-Trait identifiers can either be using the sugared syntax (.token-a.token-trait), or be fully qualified ('SPAXYA5XS51713FDTQ8H94EJ4V579CXMTRNBZKSF.token-a.token-trait).
+Trait identifiers can either be using the sugared syntax (.token-a.token-trait), or be fully qualified
+('SPAXYA5XS51713FDTQ8H94EJ4V579CXMTRNBZKSF.token-a.token-trait).
 
-Like other kinds of definition statements, `impl-trait` may only be used at the top level of a smart contract definition (i.e., you cannot put such a statement in the middle of a function body).
+Like other kinds of definition statements, `impl-trait` may only be used at the top level of a smart contract
+definition (i.e., you cannot put such a statement in the middle of a function body).
 
-**example:**
+
+**Example:**
 
 ```
 (impl-trait 'SPAXYA5XS51713FDTQ8H94EJ4V579CXMTRNBZKSF.token-a.token-trait)
-(define-public (get-balance (account principal))  
+(define-public (get-balance (account principal))
   (ok u0))
-(define-public (transfer? (from principal) (to principal) (amount uint))  
+(define-public (transfer? (from principal) (to principal) (amount uint))
   (ok u0))
 ```
 
-## index-of​
+## index-of
 
 Introduced in: **Clarity 1**
 
-**input:** `sequence_A, A`
+**Input:** `sequence_A, A`
 
-**output:** `(optional uint)`
+**Output:** `(optional uint)`
 
-**signature:** `(index-of? sequence item)`
+**Signature:** `(index-of? sequence item)`
 
-**description:**
+**Description:**
 
-The `index-of?` function returns the first index at which `item` can be found, using `is-eq` checks, in the provided sequence. Applicable sequence types are `(list A)`, `buff`, `string-ascii` and `string-utf8`, for which the corresponding element types are, respectively, `A`, `(buff 1)`, `(string-ascii 1)` and `(string-utf8 1)`. If the target item is not found in the sequence (or if an empty string or buffer is supplied), this function returns `none`. In Clarity1, `index-of` must be used (without the `?`). The `?` is added in Clarity2 for consistency -- built-ins that return responses or optionals end in `?`. The Clarity1 spelling is left as an alias in Clarity2 for backwards compatibility.
+The `index-of?` function returns the first index at which `item` can be
+found, using `is-eq` checks, in the provided sequence.
+Applicable sequence types are `(list A)`, `buff`, `string-ascii` and `string-utf8`,
+for which the corresponding element types are, respectively, `A`, `(buff 1)`, `(string-ascii 1)` and `(string-utf8 1)`.
+If the target item is not found in the sequence (or if an empty string or buffer is
+supplied), this function returns `none`.
 
-**example:**
+In Clarity1, `index-of` must be used (without the `?`). The `?` is added in Clarity2 for consistency -- built-ins that return responses or optionals end in `?`. The Clarity1 spelling is left as an alias in Clarity2 for backwards compatibility.
 
-```
-(index-of? "blockstack" "b") ;; Returns (some u0)
-(index-of? "blockstack" "k") ;; Returns (some u4)
-(index-of? "blockstack" "") ;; Returns none
-(index-of? (list 1 2 3 4 5) 6) ;; Returns none
-(index-of? 0xfb01 0x01) ;; Returns (some u1)
-```
 
-## index-of?​
-
-Introduced in: **Clarity 2**
-
-**input:** `sequence_A, A`
-
-**output:** `(optional uint)`
-
-**signature:** `(index-of? sequence item)`
-
-**description:**
-
-The `index-of?` function returns the first index at which `item` can be found, using `is-eq` checks, in the provided sequence. Applicable sequence types are `(list A)`, `buff`, `string-ascii` and `string-utf8`, for which the corresponding element types are, respectively, `A`, `(buff 1)`, `(string-ascii 1)` and `(string-utf8 1)`. If the target item is not found in the sequence (or if an empty string or buffer is supplied), this function returns `none`. In Clarity1, `index-of` must be used (without the `?`). The `?` is added in Clarity2 for consistency -- built-ins that return responses or optionals end in `?`. The Clarity1 spelling is left as an alias in Clarity2 for backwards compatibility.
-
-**example:**
+**Example:**
 
 ```
 (index-of? "blockstack" "b") ;; Returns (some u0)
@@ -1462,23 +1669,55 @@ The `index-of?` function returns the first index at which `item` can be found, u
 (index-of? 0xfb01 0x01) ;; Returns (some u1)
 ```
 
-## int-to-ascii​
+## index-of?
 
 Introduced in: **Clarity 2**
 
-**input:** `int | uint`
+**Input:** `sequence_A, A`
 
-**output:** `(string-ascii 40)`
+**Output:** `(optional uint)`
 
-**signature:** `(int-to-ascii (int|uint))`
+**Signature:** `(index-of? sequence item)`
 
-**description:**
+**Description:**
+
+The `index-of?` function returns the first index at which `item` can be
+found, using `is-eq` checks, in the provided sequence.
+Applicable sequence types are `(list A)`, `buff`, `string-ascii` and `string-utf8`,
+for which the corresponding element types are, respectively, `A`, `(buff 1)`, `(string-ascii 1)` and `(string-utf8 1)`.
+If the target item is not found in the sequence (or if an empty string or buffer is
+supplied), this function returns `none`.
+
+In Clarity1, `index-of` must be used (without the `?`). The `?` is added in Clarity2 for consistency -- built-ins that return responses or optionals end in `?`. The Clarity1 spelling is left as an alias in Clarity2 for backwards compatibility.
+
+
+**Example:**
+
+```
+(index-of? "blockstack" "b") ;; Returns (some u0)
+(index-of? "blockstack" "k") ;; Returns (some u4)
+(index-of? "blockstack" "") ;; Returns none
+(index-of? (list 1 2 3 4 5) 6) ;; Returns none
+(index-of? 0xfb01 0x01) ;; Returns (some u1)
+```
+
+## int-to-ascii
+
+Introduced in: **Clarity 2**
+
+**Input:** `int | uint`
+
+**Output:** `(string-ascii 40)`
+
+**Signature:** `(int-to-ascii (int|uint))`
+
+**Description:**
 
 Converts an integer, either `int` or `uint`, to a `string-ascii` string-value representation.
 
 Note: This function is only available starting with Stacks 2.1.
 
-**example:**
+**Example:**
 
 ```
 (int-to-ascii 1) ;; Returns "1"
@@ -1486,23 +1725,23 @@ Note: This function is only available starting with Stacks 2.1.
 (int-to-ascii -1) ;; Returns "-1"
 ```
 
-## int-to-utf8​
+## int-to-utf8
 
 Introduced in: **Clarity 2**
 
-**input:** `int | uint`
+**Input:** `int | uint`
 
-**output:** `(string-utf8 40)`
+**Output:** `(string-utf8 40)`
 
-**signature:** `(int-to-utf8 (int|uint))`
+**Signature:** `(int-to-utf8 (int|uint))`
 
-**description:**
+**Description:**
 
 Converts an integer, either `int` or `uint`, to a `string-utf8` string-value representation.
 
 Note: This function is only available starting with Stacks 2.1.
 
-**example:**
+**Example:**
 
 ```
 (int-to-utf8 1) ;; Returns u"1"
@@ -1510,21 +1749,23 @@ Note: This function is only available starting with Stacks 2.1.
 (int-to-utf8 -1) ;; Returns u"-1"
 ```
 
-## is-eq​
+## is-eq
 
 Introduced in: **Clarity 1**
 
-**input:** `A, A, ...`
+**Input:** `A, A, ...`
 
-**output:** `bool`
+**Output:** `bool`
 
-**signature:** `(is-eq v1 v2...)`
+**Signature:** `(is-eq v1 v2...)`
 
-**description:**
+**Description:**
 
-Compares the inputted values, returning `true` if they are all equal. Note that _unlike_ the `(and ...)` function, `(is-eq ...)` will _not_ short-circuit. All values supplied to is-eq _must_ be the same type.
+Compares the inputted values, returning `true` if they are all equal. Note that 
+_unlike_ the `(and ...)` function, `(is-eq ...)` will _not_ short-circuit. All values supplied to
+is-eq _must_ be the same type.
 
-**example:**
+**Example:**
 
 ```
 (is-eq 1 1) ;; Returns true
@@ -1534,42 +1775,44 @@ Compares the inputted values, returning `true` if they are all equal. Note that 
 (is-eq 0x0102 0x0102) ;; Returns true
 ```
 
-## is-err​
+## is-err
 
 Introduced in: **Clarity 1**
 
-**input:** `(response A B)`
+**Input:** `(response A B)`
 
-**output:** `bool`
+**Output:** `bool`
 
-**signature:** `(is-err value)`
+**Signature:** `(is-err value)`
 
-**description:**
+**Description:**
 
-`is-err` tests a supplied response value, returning `true` if the response was an `err`, and `false` if it was an `ok`.
+`is-err` tests a supplied response value, returning `true` if the response was an `err`,
+and `false` if it was an `ok`.
 
-**example:**
+**Example:**
 
 ```
 (is-err (ok 1)) ;; Returns false
 (is-err (err 1)) ;; Returns true
 ```
 
-## is-none​
+## is-none
 
 Introduced in: **Clarity 1**
 
-**input:** `(optional A)`
+**Input:** `(optional A)`
 
-**output:** `bool`
+**Output:** `bool`
 
-**signature:** `(is-none value)`
+**Signature:** `(is-none value)`
 
-**description:**
+**Description:**
 
-`is-none` tests a supplied option value, returning `true` if the option value is `(none)`, and `false` if it is a `(some ...)`.
+`is-none` tests a supplied option value, returning `true` if the option value is `none`,
+and `false` if it is a `(some ...)`.
 
-**example:**
+**Example:**
 
 ```
 (define-map names-map { name: (string-ascii 12) } { id: int })
@@ -1578,42 +1821,44 @@ Introduced in: **Clarity 1**
 (is-none (get id (map-get? names-map { name: "non-existant" }))) ;; Returns true
 ```
 
-## is-ok​
+## is-ok
 
 Introduced in: **Clarity 1**
 
-**input:** `(response A B)`
+**Input:** `(response A B)`
 
-**output:** `bool`
+**Output:** `bool`
 
-**signature:** `(is-ok value)`
+**Signature:** `(is-ok value)`
 
-**description:**
+**Description:**
 
-`is-ok` tests a supplied response value, returning `true` if the response was `ok`, and `false` if it was an `err`.
+`is-ok` tests a supplied response value, returning `true` if the response was `ok`,
+and `false` if it was an `err`.
 
-**example:**
+**Example:**
 
 ```
 (is-ok (ok 1)) ;; Returns true
 (is-ok (err 1)) ;; Returns false
 ```
 
-## is-some​
+## is-some
 
 Introduced in: **Clarity 1**
 
-**input:** `(optional A)`
+**Input:** `(optional A)`
 
-**output:** `bool`
+**Output:** `bool`
 
-**signature:** `(is-some value)`
+**Signature:** `(is-some value)`
 
-**description:**
+**Description:**
 
-`is-some` tests a supplied option value, returning `true` if the option value is `(some ...)`, and `false` if it is a `none`.
+`is-some` tests a supplied option value, returning `true` if the option value is `(some ...)`,
+and `false` if it is a `none`.
 
-**example:**
+**Example:**
 
 ```
 (define-map names-map { name: (string-ascii 12) } { id: int })
@@ -1622,23 +1867,31 @@ Introduced in: **Clarity 1**
 (is-some (get id (map-get? names-map { name: "non-existant" }))) ;; Returns false
 ```
 
-## is-standard​
+## is-standard
 
 Introduced in: **Clarity 2**
 
-**input:** `principal`
+**Input:** `principal`
 
-**output:** `bool`
+**Output:** `bool`
 
-**signature:** `(is-standard standard-or-contract-principal)`
+**Signature:** `(is-standard standard-or-contract-principal)`
 
-**description:**
+**Description:**
 
-Tests whether `standard-or-contract-principal` _matches_ the current network type, and therefore represents a principal that can spend tokens on the current network type. That is, the network is either of type `mainnet`, or `testnet`. Only `SPxxxx` and `SMxxxx` _c32check form_ addresses can spend tokens on a mainnet, whereas only `STxxxx` and `SNxxxx` _c32check forms_ addresses can spend tokens on a testnet. All addresses can _receive_ tokens, but only principal _c32check form_ addresses that match the network type can _spend_ tokens on the network. This method will return `true` if and only if the principal matches the network type, and false otherwise.
+Tests whether `standard-or-contract-principal` _matches_ the current network
+type, and therefore represents a principal that can spend tokens on the current
+network type. That is, the network is either of type `mainnet`, or `testnet`.
+Only `SPxxxx` and `SMxxxx` _c32check form_ addresses can spend tokens on
+a mainnet, whereas only `STxxxx` and `SNxxxx` _c32check forms_ addresses can spend
+tokens on a testnet. All addresses can _receive_ tokens, but only principal
+_c32check form_ addresses that match the network type can _spend_ tokens on the
+network.  This method will return `true` if and only if the principal matches
+the network type, and false otherwise.
 
 Note: This function is only available starting with Stacks 2.1.
 
-**example:**
+**Example:**
 
 ```
 (is-standard 'STB44HYPYAT2BB2QE513NSP81HTMYWBJP02HPGK6) ;; returns true on testnet and false on mainnet
@@ -1648,41 +1901,46 @@ Note: This function is only available starting with Stacks 2.1.
 (is-standard 'SZ2J6ZY48GV1EZ5V2V5RB9MP66SW86PYKKQ9H6DPR) ;; returns false on both mainnet and testnet
 ```
 
-## keccak256​
+## keccak256
 
 Introduced in: **Clarity 1**
 
-**input:** `buff|uint|int`
+**Input:** `buff|uint|int`
 
-**output:** `(buff 32)`
+**Output:** `(buff 32)`
 
-**signature:** `(keccak256 value)`
+**Signature:** `(keccak256 value)`
 
-**description:**
+**Description:**
 
-The `keccak256` function computes `KECCAK256(value)` of the inputted value. Note that this differs from the `NIST SHA-3` (that is, FIPS 202) standard. If an integer (128 bit) is supplied the hash is computed over the little-endian representation of the integer.
+The `keccak256` function computes `KECCAK256(value)` of the inputted value.
 
-**example:**
+Note: this differs from the `NIST SHA-3` (that is, FIPS 202) standard. If an integer (128 bit)
+is supplied the hash is computed over the little-endian representation of the integer.
+
+**Example:**
 
 ```
 (keccak256 0) ;; Returns 0xf490de2920c8a35fabeb13208852aa28c76f9be9b03a4dd2b3c075f7a26923b4
 ```
 
-## len​
+## len
 
 Introduced in: **Clarity 1**
 
-**input:** `sequence_A`
+**Input:** `sequence_A`
 
-**output:** `uint`
+**Output:** `uint`
 
-**signature:** `(len sequence)`
+**Signature:** `(len sequence)`
 
-**description:**
+**Description:**
 
-The `len` function returns the length of a given sequence. Applicable sequence types are `(list A)`, `buff`, `string-ascii` and `string-utf8`.
+The `len` function returns the length of a given sequence.
+Applicable sequence types are `(list A)`, `buff`, `string-ascii` and `string-utf8`.
+    
 
-**example:**
+**Example:**
 
 ```
 (len "blockstack") ;; Returns u10
@@ -1690,70 +1948,71 @@ The `len` function returns the length of a given sequence. Applicable sequence t
 (len 0x010203) ;; Returns u3
 ```
 
-## let​
+## let
 
 Introduced in: **Clarity 1**
 
-**input:** `((name1 AnyType) (name2 AnyType) ...), AnyType, ... A`
+**Input:** `((name1 AnyType) (name2 AnyType) ...), AnyType, ... A`
 
-**output:** `A`
+**Output:** `A`
 
-**signature:** `(let ((name1 expr1) (name2 expr2) ...) expr-body1 expr-body2 ... expr-body-last)`
+**Signature:** `(let ((name1 expr1) (name2 expr2) ...) expr-body1 expr-body2 ... expr-body-last)`
 
-**description:**
+**Description:**
 
-The `let` function accepts a list of `variable name` and `expression` pairs, evaluating each expression and _binding_ it to the corresponding variable name. `let` bindings are sequential: when a `let` binding is evaluated, it may refer to prior binding. The _context_ created by this set of bindings is used for evaluating its body expressions. The let expression returns the value of the last such body expression. Note: intermediary statements returning a response type must be checked
+The `let` function accepts a list of `variable name` and `expression` pairs,
+evaluating each expression and _binding_ it to the corresponding variable name.
+`let` bindings are sequential: when a `let` binding is evaluated, it may refer to prior binding.
+The _context_ created by this set of bindings is used for evaluating its body expressions.
+The let expression returns the value of the last such body expression.
 
-**example:**
+Note: intermediary statements returning a response type must be checked
+
+**Example:**
 
 ```
-(let 
-  ( (a 2) (b (+ 5 6 7))) 
-  (print a) 
-  (print b) 
-  (+ a b)) ;; Returns 20
-(let 
-  ( (a 5) (c (+ a 1)) (d (+ c 1)) (b (+ a c d))) 
-  (print a) 
-  (print b) 
-  (+ a b)) ;; Returns 23
+(let ((a 2) (b (+ 5 6 7))) (print a) (print b) (+ a b)) ;; Returns 20
+(let ((a 5) (c (+ a 1)) (d (+ c 1)) (b (+ a c d))) (print a) (print b) (+ a b)) ;; Returns 23
 ```
 
-## list​
+## list
 
 Introduced in: **Clarity 1**
 
-**input:** `A, ...`
+**Input:** `A, ...`
 
-**output:** `(list A)`
+**Output:** `(list A)`
 
-**signature:** `(list expr1 expr2 expr3 ...)`
+**Signature:** `(list expr1 expr2 expr3 ...)`
 
-**description:**
+**Description:**
 
-The `list` function constructs a list composed of the inputted values. Each supplied value must be of the same type.
+The `list` function constructs a list composed of the inputted values. Each
+supplied value must be of the same type.
 
-**example:**
+**Example:**
 
 ```
 (list (+ 1 2) 4 5) ;; Returns (3 4 5)
 ```
 
-## log2​
+## log2
 
 Introduced in: **Clarity 1**
 
-**input:** `int | uint`
+**Input:** `int | uint`
 
-**output:** `int | uint`
+**Output:** `int | uint`
 
-**signature:** `(log2 n)`
+**Signature:** `(log2 n)`
 
-**description:**
+**Description:**
 
-Returns the power to which the number 2 must be raised to to obtain the value `n`, rounded down to the nearest integer. Fails on a negative numbers.
+Returns the power to which the number 2 must be raised to obtain the value `n`, rounded 
+down to the nearest integer. Fails on a negative numbers.
 
-**example:**
+
+**Example:**
 
 ```
 (log2 u8) ;; Returns u3
@@ -1762,48 +2021,54 @@ Returns the power to which the number 2 must be raised to to obtain the value `n
 (log2 1000) ;; Returns 9
 ```
 
-## map​
+## map
 
 Introduced in: **Clarity 1**
 
-**input:** `Function(A, B, ..., N) -> X, sequence_A, sequence_B, ..., sequence_N`
+**Input:** `Function(A, B, ..., N) -> X, sequence_A, sequence_B, ..., sequence_N`
 
-**output:** `(list X)`
+**Output:** `(list X)`
 
-**signature:** `(map func sequence_A sequence_B ... sequence_N)`
+**Signature:** `(map func sequence_A sequence_B ... sequence_N)`
 
-**description:**
+**Description:**
 
-The `map` function applies the function `func` to each corresponding element of the input sequences, and outputs a _list_ of the same type containing the outputs from those function applications. Applicable sequence types are `(list A)`, `buff`, `string-ascii` and `string-utf8`, for which the corresponding element types are, respectively, `A`, `(buff 1)`, `(string-ascii 1)` and `(string-utf8 1)`. The `func` argument must be a literal function name. Also, note that, no matter what kind of sequences the inputs are, the output is always a list.
+The `map` function applies the function `func` to each corresponding element of the input sequences,
+and outputs a _list_ of the same type containing the outputs from those function applications.
+Applicable sequence types are `(list A)`, `buff`, `string-ascii` and `string-utf8`,
+for which the corresponding element types are, respectively, `A`, `(buff 1)`, `(string-ascii 1)` and `(string-utf8 1)`.
+The `func` argument must be a literal function name.
 
-**example:**
+Note: no matter what kind of sequences the inputs are, the output is always a list.
+
+**Example:**
 
 ```
 (map not (list true false true false)) ;; Returns (false true false true)
 (map + (list 1 2 3) (list 1 2 3) (list 1 2 3)) ;; Returns (3 6 9)
-(define-private (a-or-b (char (string-utf8 1))) 
-  (if (is-eq char u"a") u"a" u"b"))
+(define-private (a-or-b (char (string-utf8 1))) (if (is-eq char u"a") u"a" u"b"))
 (map a-or-b u"aca") ;; Returns (u"a" u"b" u"a")
-(define-private (zero-or-one (char (buff 1))) 
-  (if (is-eq char 0x00) 0x00 0x01))
+(define-private (zero-or-one (char (buff 1))) (if (is-eq char 0x00) 0x00 0x01))
 (map zero-or-one 0x000102) ;; Returns (0x00 0x01 0x01)
 ```
 
-## map-delete​
+## map-delete
 
 Introduced in: **Clarity 1**
 
-**input:** `MapName, tuple`
+**Input:** `MapName, tuple`
 
-**output:** `bool`
+**Output:** `bool`
 
-**signature:** `(map-delete map-name key-tuple)`
+**Signature:** `(map-delete map-name key-tuple)`
 
-**description:**
+**Description:**
 
-The `map-delete` function removes the value associated with the input key for the given map. If an item exists and is removed, the function returns `true`. If a value did not exist for this key in the data map, the function returns `false`.
+The `map-delete` function removes the value associated with the input key for
+the given map. If an item exists and is removed, the function returns `true`.
+If a value did not exist for this key in the data map, the function returns `false`.
 
-**example:**
+**Example:**
 
 ```
 (define-map names-map { name: (string-ascii 10) } { id: int })
@@ -1813,21 +2078,24 @@ The `map-delete` function removes the value associated with the input key for th
 (map-delete names-map (tuple (name "blockstack"))) ;; Same command, using a shorthand for constructing the tuple
 ```
 
-## map-get?​
+## map-get?
 
 Introduced in: **Clarity 1**
 
-**input:** `MapName, tuple`
+**Input:** `MapName, tuple`
 
-**output:** `(optional (tuple))`
+**Output:** `(optional (tuple))`
 
-**signature:** `(map-get? map-name key-tuple)`
+**Signature:** `(map-get? map-name key-tuple)`
 
-**description:**
+**Description:**
 
-The `map-get?` function looks up and returns an entry from a contract's data map. The value is looked up using `key-tuple`. If there is no value associated with that key in the data map, the function returns a `none` option. Otherwise, it returns `(some value)`.
+The `map-get?` function looks up and returns an entry from a contract's data map.
+The value is looked up using `key-tuple`.
+If there is no value associated with that key in the data map, the function returns a `none` option. Otherwise,
+it returns `(some value)`.
 
-**example:**
+**Example:**
 
 ```
 (define-map names-map { name: (string-ascii 10) } { id: int })
@@ -1836,23 +2104,27 @@ The `map-get?` function looks up and returns an entry from a contract's data map
 (map-get? names-map { name: "blockstack" }) ;; Same command, using a shorthand for constructing the tuple
 ```
 
-## map-insert​
+## map-insert
 
 Introduced in: **Clarity 1**
 
-**input:** `MapName, tuple_A, tuple_B`
+**Input:** `MapName, tuple_A, tuple_B`
 
-**output:** `bool`
+**Output:** `bool`
 
-**signature:** `(map-insert map-name key-tuple value-tuple)`
+**Signature:** `(map-insert map-name key-tuple value-tuple)`
 
-**description:**
+**Description:**
 
-The `map-insert` function sets the value associated with the input key to the inputted value if and only if there is not already a value associated with the key in the map. If an insert occurs, the function returns `true`. If a value already existed for this key in the data map, the function returns `false`.
+The `map-insert` function sets the value associated with the input key to the
+inputted value if and only if there is not already a value associated with the key in the map.
+If an insert occurs, the function returns `true`. If a value already existed for
+this key in the data map, the function returns `false`.
 
-Note: the `value-tuple` requires 1 additional byte for storage in the materialized blockchain state, and therefore the maximum size of a value that may be inserted into a map is MAX\_CLARITY\_VALUE - 1.
+Note: the `value-tuple` requires 1 additional byte for storage in the materialized blockchain state,
+and therefore the maximum size of a value that may be inserted into a map is MAX_CLARITY_VALUE - 1.
 
-**example:**
+**Example:**
 
 ```
 (define-map names-map { name: (string-ascii 10) } { id: int })
@@ -1861,23 +2133,26 @@ Note: the `value-tuple` requires 1 additional byte for storage in the materializ
 (map-insert names-map (tuple (name "blockstack")) (tuple (id 1337))) ;; Same command, using a shorthand for constructing the tuple
 ```
 
-## map-set​
+## map-set
 
 Introduced in: **Clarity 1**
 
-**input:** `MapName, tuple_A, tuple_B`
+**Input:** `MapName, tuple_A, tuple_B`
 
-**output:** `bool`
+**Output:** `bool`
 
-**signature:** `(map-set map-name key-tuple value-tuple)`
+**Signature:** `(map-set map-name key-tuple value-tuple)`
 
-**description:**
+**Description:**
 
-The `map-set` function sets the value associated with the input key to the inputted value. This function performs a _blind_ update; whether or not a value is already associated with the key, the function overwrites that existing association.
+The `map-set` function sets the value associated with the input key to the
+inputted value. This function performs a _blind_ update; whether or not a value is already associated
+with the key, the function overwrites that existing association.
 
-Note: the `value-tuple` requires 1 additional byte for storage in the materialized blockchain state, and therefore the maximum size of a value that may be inserted into a map is MAX\_CLARITY\_VALUE - 1.
+Note: the `value-tuple` requires 1 additional byte for storage in the materialized blockchain state,
+and therefore the maximum size of a value that may be inserted into a map is MAX_CLARITY_VALUE - 1.
 
-**example:**
+**Example:**
 
 ```
 (define-map names-map { name: (string-ascii 10) } { id: int })
@@ -1885,92 +2160,102 @@ Note: the `value-tuple` requires 1 additional byte for storage in the materializ
 (map-set names-map (tuple (name "blockstack")) (tuple (id 1337))) ;; Same command, using a shorthand for constructing the tuple
 ```
 
-## match​
+## match
 
 Introduced in: **Clarity 1**
 
-**input:** `(optional A) name expression expression | (response A B) name expression name expression`
+**Input:** `(optional A) name expression expression | (response A B) name expression name expression`
 
-**output:** `C`
+**Output:** `C`
 
-**signature:** `(match opt-input some-binding-name some-branch none-branch) | (match-resp input ok-binding-name ok-branch err-binding-name err-branch)`
+**Signature:** `(match opt-input some-binding-name some-branch none-branch) |
+(match-resp input ok-binding-name ok-branch err-binding-name err-branch)`
 
-**description:**
+**Description:**
 
 The `match` function is used to test and destructure optional and response types.
 
-If the `input` is an optional, it tests whether the provided `input` is a `some` or `none` option, and evaluates `some-branch` or `none-branch` in each respective case.
+If the `input` is an optional, it tests whether the provided
+`input` is a `some` or `none` option, and evaluates `some-branch` or
+`none-branch` in each respective case.
 
-Within the `some-branch`, the _contained value_ of the `input` argument is bound to the provided `some-binding-name` name.
-
-Only _one_ of the branches will be evaluated (similar to `if` statements).
-
-If the `input` is a response, it tests whether the provided `input` is an `ok` or `err` response type, and evaluates `ok-branch` or `err-branch` in each respective case.
-
-Within the `ok-branch`, the _contained ok value_ of the `input` argument is bound to the provided `ok-binding-name` name.
-
-Within the `err-branch`, the _contained err value_ of the `input` argument is bound to the provided `err-binding-name` name.
+Within the `some-branch`, the _contained value_ of the `input`
+argument is bound to the provided `some-binding-name` name.
 
 Only _one_ of the branches will be evaluated (similar to `if` statements).
 
-Note: Type checking requires that the type of both the ok and err parts of the response object be determinable. For situations in which one of the parts of a response is untyped, you should use `unwrap-panic` or `unwrap-err-panic` instead of `match`.
+If the `input` is a response, it tests whether the provided `input` is
+an `ok` or `err` response type, and evaluates `ok-branch` or
+`err-branch` in each respective case.
 
-**example:**
+Within the `ok-branch`, the _contained ok value_ of the `input`
+argument is bound to the provided `ok-binding-name` name.
+
+Within the `err-branch`, the _contained err value_ of the `input`
+argument is bound to the provided `err-binding-name` name.
+
+Only _one_ of the branches will be evaluated (similar to `if` statements).
+
+Note: Type checking requires that the type of both the ok and err parts of the
+response object be determinable. For situations in which one of the parts of a response
+is untyped, you should use `unwrap-panic` or `unwrap-err-panic` instead of `match`.
+
+**Example:**
 
 ```
-(define-private (add-10 (x (optional int)))  
-  (match x 
-    value (+ 10 value)
-    10))
+(define-private (add-10 (x (optional int)))
+  (match x
+  value (+ 10 value)
+  10))
 (add-10 (some 5)) ;; Returns 15
 (add-10 none) ;; Returns 10
-(define-private (add-or-pass-err (x (response int (string-ascii 10))) (to-add int))  
+
+(define-private (add-or-pass-err (x (response int (string-ascii 10))) (to-add int))
   (match x
-    value (ok (+ to-add value))
-    err-value (err err-value)))
+   value (ok (+ to-add value))
+   err-value (err err-value)))
 (add-or-pass-err (ok 5) 20) ;; Returns (ok 25)
 (add-or-pass-err (err "ERROR") 20) ;; Returns (err "ERROR")
 ```
 
-## merge​
+## merge
 
 Introduced in: **Clarity 1**
 
-**input:** `tuple, tuple`
+**Input:** `tuple, tuple`
 
-**output:** `tuple`
+**Output:** `tuple`
 
-**signature:** `(merge tuple { key1: val1 })`
+**Signature:** `(merge tuple { key1: val1 })`
 
-**description:**
+**Description:**
 
 The `merge` function returns a new tuple with the combined fields, without mutating the supplied tuples.
 
-**example:**
+**Example:**
 
 ```
 (define-map users { id: int } { name: (string-ascii 12), address: (optional principal) })
 (map-insert users { id: 1337 } { name: "john", address: none }) ;; Returns true
-(let 
-  ( (user (unwrap-panic (map-get? users { id: 1337 }))))    
-  (merge user { address: (some 'SPAXYA5XS51713FDTQ8H94EJ4V579CXMTRNBZKSF) })) ;; Returns (tuple (address (some SPAXYA5XS51713FDTQ8H94EJ4V579CXMTRNBZKSF)) (name "john"))
+(let ((user (unwrap-panic (map-get? users { id: 1337 }))))
+    (merge user { address: (some 'SPAXYA5XS51713FDTQ8H94EJ4V579CXMTRNBZKSF) })) ;; Returns (tuple (address (some SPAXYA5XS51713FDTQ8H94EJ4V579CXMTRNBZKSF)) (name "john"))
 ```
 
-## mod​
+## mod
 
 Introduced in: **Clarity 1**
 
-**input:** `int, int | uint, uint | string-ascii, string-ascii | string-utf8, string-utf8 | buff, buff`
+**Input:** `int, int | uint, uint | string-ascii, string-ascii | string-utf8, string-utf8 | buff, buff`
 
-**output:** `int | uint`
+**Output:** `int | uint`
 
-**signature:** `(mod i1 i2)`
+**Signature:** `(mod i1 i2)`
 
-**description:**
+**Description:**
 
 Returns the integer remainder from integer dividing `i1` by `i2`. In the event of a division by zero, throws a runtime error.
 
-**example:**
+**Example:**
 
 ```
 (mod 2 3) ;; Returns 2
@@ -1978,25 +2263,30 @@ Returns the integer remainder from integer dividing `i1` by `i2`. In the event o
 (mod 7 1) ;; Returns 0
 ```
 
-## nft-burn?​
+## nft-burn?
 
 Introduced in: **Clarity 1**
 
-**input:** `AssetName, A, principal`
+**Input:** `AssetName, A, principal`
 
-**output:** `(response bool uint)`
+**Output:** `(response bool uint)`
 
-**signature:** `(nft-burn? asset-class asset-identifier sender)`
+**Signature:** `(nft-burn? asset-class asset-identifier sender)`
 
-**description:**
+**Description:**
 
-`nft-burn?` is used to burn an asset that the `sender` principal owns. The asset must have been defined using `define-non-fungible-token`, and the supplied `asset-identifier` must be of the same type specified in that definition.
+`nft-burn?` is used to burn an asset that the `sender` principal owns.
+The asset must have been defined using `define-non-fungible-token`, and the supplied 
+`asset-identifier` must be of the same type specified in that definition.
 
-On a successful burn, it returns `(ok true)`. In the event of an unsuccessful burn it returns one of the following error codes:
+On a successful burn, it returns `(ok true)`. In the event of an unsuccessful burn it
+returns one of the following error codes:
 
-`(err u1)` -- `sender` does not own the specified asset `(err u3)` -- the asset specified by `asset-identifier` does not exist
+* `(err u1)` -- `sender` does not own the specified asset
+* `(err u3)` -- the asset specified by `asset-identifier` does not exist
 
-**example:**
+
+**Example:**
 
 ```
 (define-non-fungible-token stackaroo (string-ascii 40))
@@ -2004,21 +2294,23 @@ On a successful burn, it returns `(ok true)`. In the event of an unsuccessful bu
 (nft-burn? stackaroo "Roo" 'SPAXYA5XS51713FDTQ8H94EJ4V579CXMTRNBZKSF) ;; Returns (ok true)
 ```
 
-## nft-get-owner?​
+## nft-get-owner?
 
 Introduced in: **Clarity 1**
 
-**input:** `AssetName, A`
+**Input:** `AssetName, A`
 
-**output:** `(optional principal)`
+**Output:** `(optional principal)`
 
-**signature:** `(nft-get-owner? asset-class asset-identifier)`
+**Signature:** `(nft-get-owner? asset-class asset-identifier)`
 
-**description:**
+**Description:**
 
-`nft-get-owner?` returns the owner of an asset, identified by `asset-identifier`, or `none` if the asset does not exist. The asset type must have been defined using `define-non-fungible-token`, and the supplied `asset-identifier` must be of the same type specified in that definition.
+`nft-get-owner?` returns the owner of an asset, identified by `asset-identifier`, or `none` if the asset does not exist.
+The asset type must have been defined using `define-non-fungible-token`, and the supplied `asset-identifier` must be of the same type specified in
+that definition.
 
-**example:**
+**Example:**
 
 ```
 (define-non-fungible-token stackaroo (string-ascii 40))
@@ -2027,52 +2319,60 @@ Introduced in: **Clarity 1**
 (nft-get-owner? stackaroo "Too") ;; Returns none
 ```
 
-## nft-mint?​
+## nft-mint?
 
 Introduced in: **Clarity 1**
 
-**input:** `AssetName, A, principal`
+**Input:** `AssetName, A, principal`
 
-**output:** `(response bool uint)`
+**Output:** `(response bool uint)`
 
-**signature:** `(nft-mint? asset-class asset-identifier recipient)`
+**Signature:** `(nft-mint? asset-class asset-identifier recipient)`
 
-**description:**
+**Description:**
 
-`nft-mint?` is used to instantiate an asset and set that asset's owner to the `recipient` principal. The asset must have been defined using `define-non-fungible-token`, and the supplied `asset-identifier` must be of the same type specified in that definition.
+`nft-mint?` is used to instantiate an asset and set that asset's owner to the `recipient` principal.
+The asset must have been defined using `define-non-fungible-token`, and the supplied `asset-identifier` must be of the same type specified in
+that definition.
 
-If an asset identified by `asset-identifier` _already exists_, this function will return an error with the following error code:
+The function returns `(ok true)` if the mint is successful. This function may fail with the error code:
 
-`(err u1)`
+* `(err u1)` -- an asset identified by `asset-identifier` _already exists_
 
-Otherwise, on successfuly mint, it returns `(ok true)`.
 
-**example:**
+**Example:**
 
 ```
 (define-non-fungible-token stackaroo (string-ascii 40))
 (nft-mint? stackaroo "Roo" 'SPAXYA5XS51713FDTQ8H94EJ4V579CXMTRNBZKSF) ;; Returns (ok true)
 ```
 
-## nft-transfer?​
+## nft-transfer?
 
 Introduced in: **Clarity 1**
 
-**input:** `AssetName, A, principal, principal`
+**Input:** `AssetName, A, principal, principal`
 
-**output:** `(response bool uint)`
+**Output:** `(response bool uint)`
 
-**signature:** `(nft-transfer? asset-class asset-identifier sender recipient)`
+**Signature:** `(nft-transfer? asset-class asset-identifier sender recipient)`
 
-**description:**
+**Description:**
 
-`nft-transfer?` is used to change the owner of an asset identified by `asset-identifier` from `sender` to `recipient`. The `asset-class` must have been defined by `define-non-fungible-token` and `asset-identifier` must be of the type specified in that definition. In contrast to `stx-transfer?`, any user can transfer the asset. When used, relevant guards need to be added.
+`nft-transfer?` is used to change the owner of an asset identified by `asset-identifier`
+from `sender` to `recipient`. The `asset-class` must have been defined by `define-non-fungible-token` and `asset-identifier`
+must be of the type specified in that definition. In contrast to `stx-transfer?`, any user can transfer the asset. 
+When used, relevant guards need to be added.
 
-This function returns (ok true) if the transfer is successful. In the event of an unsuccessful transfer it returns one of the following error codes:
+This function returns (ok true) if the transfer is successful. In the event of an unsuccessful transfer it returns
+one of the following error codes:
 
-`(err u1)` -- `sender` does not own the asset `(err u2)` -- `sender` and `recipient` are the same principal `(err u3)` -- asset identified by asset-identifier does not exist
+* `(err u1)` -- `sender` does not own the asset
+* `(err u2)` -- `sender` and `recipient` are the same principal
+* `(err u3)` -- asset identified by asset-identifier does not exist
 
-**example:**
+
+**Example:**
 
 ```
 (define-non-fungible-token stackaroo (string-ascii 40))
@@ -2082,62 +2382,66 @@ This function returns (ok true) if the transfer is successful. In the event of a
 (nft-transfer? stackaroo "Stacka" 'SZ2J6ZY48GV1EZ5V2V5RB9MP66SW86PYKKQ9H6DPR 'SPAXYA5XS51713FDTQ8H94EJ4V579CXMTRNBZKSF) ;; Returns (err u3)
 ```
 
-## not​
+## not
 
 Introduced in: **Clarity 1**
 
-**input:** `bool`
+**Input:** `bool`
 
-**output:** `bool`
+**Output:** `bool`
 
-**signature:** `(not b1)`
+**Signature:** `(not b1)`
 
-**description:**
+**Description:**
 
 Returns the inverse of the boolean input.
 
-**example:**
+**Example:**
 
 ```
 (not true) ;; Returns false
 (not (is-eq 1 2)) ;; Returns true
 ```
 
-## ok​
+## ok
 
 Introduced in: **Clarity 1**
 
-**input:** `A`
+**Input:** `A`
 
-**output:** `(response A B)`
+**Output:** `(response A B)`
 
-**signature:** `(ok value)`
+**Signature:** `(ok value)`
 
-**description:**
+**Description:**
 
-The `ok` function constructs a response type from the input value. Use `ok` for creating return values in public functions. An _ok_ value indicates that any database changes during the processing of the function should materialize.
+The `ok` function constructs a response type from the input value. Use `ok` for
+creating return values in public functions. An _ok_ value indicates that any database changes during
+the processing of the function should materialize.
 
-**example:**
+**Example:**
 
 ```
 (ok 1) ;; Returns (ok 1)
 ```
 
-## or​
+## or
 
 Introduced in: **Clarity 1**
 
-**input:** `bool, ...`
+**Input:** `bool, ...`
 
-**output:** `bool`
+**Output:** `bool`
 
-**signature:** `(or b1 b2 ...)`
+**Signature:** `(or b1 b2 ...)`
 
-**description:**
+**Description:**
 
-Returns `true` if any boolean inputs are `true`. Importantly, the supplied arguments are evaluated in-order and lazily. Lazy evaluation means that if one of the arguments returns `true`, the function short-circuits, and no subsequent arguments are evaluated.
+Returns `true` if any boolean inputs are `true`. Importantly, the supplied arguments are 
+evaluated in-order and lazily. Lazy evaluation means that if one of the arguments returns `true`, the function 
+short-circuits, and no subsequent arguments are evaluated.
 
-**example:**
+**Example:**
 
 ```
 (or true false) ;; Returns true
@@ -2146,27 +2450,27 @@ Returns `true` if any boolean inputs are `true`. Importantly, the supplied argum
 (or (is-eq (+ 1 2) 3) (is-eq 4 4)) ;; Returns true
 ```
 
-## pow​
+## pow
 
 Introduced in: **Clarity 1**
 
-**input:** `int, int | uint, uint | string-ascii, string-ascii | string-utf8, string-utf8 | buff, buff`
+**Input:** `int, int | uint, uint | string-ascii, string-ascii | string-utf8, string-utf8 | buff, buff`
 
-**output:** `int | uint`
+**Output:** `int | uint`
 
-**signature:** `(pow i1 i2)`
+**Signature:** `(pow i1 i2)`
 
-**description:**
+**Description:**
 
-Returns the result of raising `i1` to the power of `i2`. In the event of an _overflow_, throws a runtime error. Note: Corner cases are handled with the following rules:
+Returns the result of raising `i1` to the power of `i2`. In the event of an _overflow_, throws a runtime error.
+Note: Corner cases are handled with the following rules:
+  * if both `i1` and `i2` are `0`, return `1`
+  * if `i1` is `1`, return `1`
+  * if `i1` is `0`, return `0`
+  * if `i2` is `1`, return `i1`
+  * if `i2` is negative or greater than `u32::MAX`, throw a runtime error
 
-* if both `i1` and `i2` are `0`, return `1`
-* if `i1` is `1`, return `1`
-* if `i1` is `0`, return `0`
-* if `i2` is `1`, return `i1`
-* if `i2` is negative or greater than `u32::MAX`, throw a runtime error
-
-**example:**
+**Example:**
 
 ```
 (pow 2 3) ;; Returns 8
@@ -2174,33 +2478,55 @@ Returns the result of raising `i1` to the power of `i2`. In the event of an _ove
 (pow 7 1) ;; Returns 7
 ```
 
-## principal-construct?​
+## principal-construct?
 
 Introduced in: **Clarity 2**
 
-**input:** `(buff 1), (buff 20), [(string-ascii 40)]`
+**Input:** `(buff 1), (buff 20), [(string-ascii 40)]`
 
-**output:** `(response principal { error_code: uint, principal: (option principal) })`
+**Output:** `(response principal { error_code: uint, value: (optional principal) })`
 
-**signature:** `(principal-construct? (buff 1) (buff 20) [(string-ascii 40)])`
+**Signature:** `(principal-construct? (buff 1) (buff 20) [(string-ascii 40)])`
 
-**description:**
+**Description:**
 
-A principal value represents either a set of keys, or a smart contract. The former, called a _standard principal_, is encoded as a `(buff 1)` _version byte_, indicating the type of account and the type of network that this principal can spend tokens on, and a `(buff 20)` _public key hash_, characterizing the principal's unique identity. The latter, a _contract principal_, is encoded as a standard principal concatenated with a `(string-ascii 40)` _contract name_ that identifies the code body.
+A principal value represents either a set of keys, or a smart contract.
+The former, called a _standard principal_,
+is encoded as a `(buff 1)` *version byte*, indicating the type of account
+and the type of network that this principal can spend tokens on,
+and a `(buff 20)` *public key hash*, characterizing the principal's unique identity.
+The latter, a _contract principal_, is encoded as a standard principal concatenated with
+a `(string-ascii 40)` *contract name* that identifies the code body.
 
-The `principal-construct?` function allows users to create either standard or contract principals, depending on which form is used. To create a standard principal, `principal-construct?` would be called with two arguments: it takes as input a `(buff 1)` which encodes the principal address's `version-byte`, a `(buff 20)` which encodes the principal address's `hash-bytes`. To create a contract principal, `principal-construct?` would be called with three arguments: the `(buff 1)` and `(buff 20)` to represent the standard principal that created the contract, and a `(string-ascii 40)` which encodes the contract's name. On success, this function returns either a standard principal or contract principal, depending on whether or not the third `(string-ascii 40)` argument is given.
+The `principal-construct?` function allows users to create either standard or contract principals,
+depending on which form is used.  To create a standard principal, 
+`principal-construct?` would be called with two arguments: it
+takes as input a `(buff 1)` which encodes the principal address's
+`version-byte`, a `(buff 20)` which encodes the principal address's `hash-bytes`.
+To create a contract principal, `principal-construct?` would be called with
+three arguments: the `(buff 1)` and `(buff 20)` to represent the standard principal
+that created the contract, and a `(string-ascii 40)` which encodes the contract's name.
+On success, this function returns either a standard principal or contract principal, 
+depending on whether or not the third `(string-ascii 40)` argument is given.
 
-This function returns a `Response`. On success, the `ok` value is a `Principal`. The `err` value is a value tuple with the form `{ error_code: uint, value: (optional principal) }`.
+This function returns a `Response`. On success, the `ok` value is a `Principal`.
+The `err` value is a value tuple with the form `{ error_code: uint, value: (optional principal) }`.
 
-If the single-byte `version-byte` is in the valid range `0x00` to `0x1f`, but is not an appropriate version byte for the current network, then the error will be `u0`, and `value` will contain `(some principal)`, where the wrapped value is the principal. If the `version-byte` is not in this range, however, then the `value` will be `none`.
+If the single-byte `version-byte` is in the valid range `0x00` to `0x1f`, but is not an appropriate
+version byte for the current network, then the error will be `u0`, and `value` will contain
+`(some principal)`, where the wrapped value is the principal.  If the `version-byte` is not in this range, 
+however, then the `value` will be `none`.
 
-If the `version-byte` is a `buff` of length 0, if the single-byte `version-byte` is a value greater than `0x1f`, or the `hash-bytes` is a `buff` of length not equal to 20, then `error_code` will be `u1` and `value` will be `None`.
+If the `version-byte` is a `buff` of length 0, if the single-byte `version-byte` is a
+value greater than `0x1f`, or the `hash-bytes` is a `buff` of length not equal to 20, then `error_code`
+will be `u1` and `value` will be `none`.
 
-If a name is given, and the name is either an empty string or contains ASCII characters that are not allowed in contract names, then `error_code` will be `u2`.
+If a name is given, and the name is either an empty string or contains ASCII characters
+that are not allowed in contract names, then `error_code` will be `u2`.
 
 Note: This function is only available starting with Stacks 2.1.
 
-**example:**
+**Example:**
 
 ```
 (principal-construct? 0x1a 0xfa6bf38ed557fe417333710d6033e9419391a320) ;; Returns (ok ST3X6QWWETNBZWGBK6DRGTR1KX50S74D3425Q1TPK)
@@ -2214,33 +2540,44 @@ Note: This function is only available starting with Stacks 2.1.
 (principal-construct? 0x1a 0xfa6bf38ed557fe417333710d6033e9419391a320 "foo[") ;; Returns (err (tuple (error_code u2) (value none)))
 ```
 
-## principal-destruct?​
+## principal-destruct?
 
 Introduced in: **Clarity 2**
 
-**input:** `principal`
+**Input:** `principal`
 
-**output:** `(response (tuple (hash-bytes (buff 20)) (name (optional (string-ascii 40))) (version (buff 1))) (tuple (hash-bytes (buff 20)) (name (optional (string-ascii 40))) (version (buff 1))))`
+**Output:** `(response (tuple (hash-bytes (buff 20)) (name (optional (string-ascii 40))) (version (buff 1))) (tuple (hash-bytes (buff 20)) (name (optional (string-ascii 40))) (version (buff 1))))`
 
-**signature:** `(principal-destruct? principal-address)`
+**Signature:** `(principal-destruct? principal-address)`
 
-**description:**
+**Description:**
 
-A principal value represents either a set of keys, or a smart contract. The former, called a _standard principal_, is encoded as a `(buff 1)` _version byte_, indicating the type of account and the type of network that this principal can spend tokens on, and a `(buff 20)` _public key hash_, characterizing the principal's unique identity. The latter, a _contract principal_, is encoded as a standard principal concatenated with a `(string-ascii 40)` _contract name_ that identifies the code body.
+A principal value represents either a set of keys, or a smart contract.
+The former, called a _standard principal_,
+is encoded as a `(buff 1)` *version byte*, indicating the type of account
+and the type of network that this principal can spend tokens on,
+and a `(buff 20)` *public key hash*, characterizing the principal's unique identity.
+The latter, a _contract principal_, is encoded as a standard principal concatenated with
+a `(string-ascii 40)` *contract name* that identifies the code body.
 
-`principal-destruct?` will decompose a principal into its component parts: either`{version-byte, hash-bytes}` for standard principals, or `{version-byte, hash-bytes, name}` for contract principals.
+`principal-destruct?` will decompose a principal into its component parts: either`{version-byte, hash-bytes}`
+for standard principals, or `{version-byte, hash-bytes, name}` for contract principals.
 
 This method returns a `Response` that wraps this data as a tuple.
 
-If the version byte of `principal-address` matches the network (see `is-standard`), then this method returns the pair as its `ok` value.
+If the version byte of `principal-address` matches the network (see `is-standard`), then this method
+returns the pair as its `ok` value.
 
-If the version byte of `principal-address` does not match the network, then this method returns the pair as its `err` value.
+If the version byte of `principal-address` does not match the network, then this method
+returns the pair as its `err` value.
 
-In both cases, the value itself is a tuple containing three fields: a `version` value as a `(buff 1)`, a `hash-bytes` value as a `(buff 20)`, and a `name` value as an `(optional (string-ascii 40))`. The `name` field will only be `(some ..)` if the principal is a contract principal.
+In both cases, the value itself is a tuple containing three fields: a `version` value as a `(buff 1)`,
+a `hash-bytes` value as a `(buff 20)`, and a `name` value as an `(optional (string-ascii 40))`.  The `name`
+field will only be `(some ..)` if the principal is a contract principal.
 
 Note: This function is only available starting with Stacks 2.1.
 
-**example:**
+**Example:**
 
 ```
 (principal-destruct? 'STB44HYPYAT2BB2QE513NSP81HTMYWBJP02HPGK6) ;; Returns (ok (tuple (hash-bytes 0x164247d6f2b425ac5771423ae6c80c754f7172b0) (name none) (version 0x1a)))
@@ -2249,192 +2586,233 @@ Note: This function is only available starting with Stacks 2.1.
 (principal-destruct? 'SP3X6QWWETNBZWGBK6DRGTR1KX50S74D3433WDGJY.foo) ;; Returns (err (tuple (hash-bytes 0xfa6bf38ed557fe417333710d6033e9419391a320) (name (some "foo")) (version 0x16)))
 ```
 
-## principal-of?​
+## principal-of?
 
 Introduced in: **Clarity 1**
 
-**input:** `(buff 33)`
+**Input:** `(buff 33)`
 
-**output:** `(response principal uint)`
+**Output:** `(response principal uint)`
 
-**signature:** `(principal-of? public-key)`
+**Signature:** `(principal-of? public-key)`
 
-**description:**
+**Description:**
 
-The `principal-of?` function returns the principal derived from the provided public key. If the `public-key` is invalid, it will return the error code `(err u1).`.
+The `principal-of?` function returns the principal derived from the provided public key.
+This function may fail with the error code:
 
-Note: Before Stacks 2.1, this function has a bug, in that the principal returned would always be a testnet single-signature principal, even if the function were run on the mainnet. Starting with Stacks 2.1, this bug is fixed, so that this function will return a principal suited to the network it is called on. In particular, if this is called on the mainnet, it will return a single-signature mainnet principal.
+* `(err u1)` -- `public-key` is invalid
 
-**example:**
+Note: Before Stacks 2.1, this function has a bug, in that the principal returned would always
+be a testnet single-signature principal, even if the function were run on the mainnet. Starting
+with Stacks 2.1, this bug is fixed, so that this function will return a principal suited to
+the network it is called on. In particular, if this is called on the mainnet, it will
+return a single-signature mainnet principal.
+    
+
+**Example:**
 
 ```
 (principal-of? 0x03adb8de4bfb65db2cfd6120d55c6526ae9c52e675db7e47308636534ba7786110) ;; Returns (ok ST1AW6EKPGT61SQ9FNVDS17RKNWT8ZP582VF9HSCP)
 ```
 
-## print​
+## print
 
 Introduced in: **Clarity 1**
 
-**input:** `A`
+**Input:** `A`
 
-**output:** `A`
+**Output:** `A`
 
-**signature:** `(print expr)`
+**Signature:** `(print expr)`
 
-**description:**
+**Description:**
 
-The `print` function evaluates and returns its input expression. On Stacks Core nodes configured for development (as opposed to production mining nodes), this function prints the resulting value to `STDOUT` (standard output).
+The `print` function evaluates and returns its input expression. On Stacks Core
+nodes configured for development (as opposed to production mining nodes), this function prints the resulting value to `STDOUT` (standard output).
 
-**example:**
+**Example:**
 
 ```
 (print (+ 1 2 3)) ;; Returns 6
 ```
 
-## replace-at?​
+## replace-at?
 
 Introduced in: **Clarity 2**
 
-**input:** `sequence_A, uint, A`
+**Input:** `sequence_A, uint, A`
 
-**output:** `(optional sequence_A)`
+**Output:** `(optional sequence_A)`
 
-**signature:** `(replace-at? sequence index element)`
+**Signature:** `(replace-at? sequence index element)`
 
-**description:**
+**Description:**
 
-The `replace-at?` function takes in a sequence, an index, and an element, and returns a new sequence with the data at the index position replaced with the given element. The given element's type must match the type of the sequence, and must correspond to a single index of the input sequence. The return type on success is the same type as the input sequence.
+The `replace-at?` function takes in a sequence, an index, and an element,
+and returns a new sequence with the data at the index position replaced with the given element. 
+The given element's type must match the type of the sequence, and must correspond to a single 
+index of the input sequence. The return type on success is the same type as the input sequence.
 
 If the provided index is out of bounds, this functions returns `none`.
 
-**example:**
+
+**Example:**
 
 ```
 (replace-at? u"ab" u1 u"c") ;; Returns (some u"ac")
 (replace-at? 0x00112233 u2 0x44) ;; Returns (some 0x00114433)
 (replace-at? "abcd" u3 "e") ;; Returns (some "abce")
 (replace-at? (list 1) u0 10) ;; Returns (some (10))
-(replace-at? (list (list 1) (list 2)) u0 (list 33)) ;; Returns (some ( (33) (2)))
+(replace-at? (list (list 1) (list 2)) u0 (list 33)) ;; Returns (some ((33) (2)))
 (replace-at? (list 1 2) u3 4) ;; Returns none
 ```
 
-## secp256k1-recover?​
+## secp256k1-recover?
 
 Introduced in: **Clarity 1**
 
-**input:** `(buff 32), (buff 65)`
+**Input:** `(buff 32), (buff 65)`
 
-**output:** `(response (buff 33) uint)`
+**Output:** `(response (buff 33) uint)`
 
-**signature:** `(secp256k1-recover? message-hash signature)`
+**Signature:** `(secp256k1-recover? message-hash signature)`
 
-**description:**
+**Description:**
 
-The `secp256k1-recover?` function recovers the public key used to sign the message which sha256 is `message-hash` with the provided `signature`. If the signature does not match, it will return the error code `(err u1).`. If the signature is invalid, it will return the error code `(err u2).`. The signature includes 64 bytes plus an additional recovery id (00..03) for a total of 65 bytes.
+The `secp256k1-recover?` function recovers the public key used to sign the message whose sha256 is `message-hash`
+with the provided `signature`. The signature includes 64 bytes plus an additional recovery id (00..03) for a total of 65 bytes.
+On success, it returns the public key as a 33-byte buffer. This function may fail with one of the following error codes:
 
-**example:**
+* `(err u1)` - the signature does not match the message hash
+* `(err u2)` - the signature is invalid
+
+
+**Example:**
 
 ```
-(secp256k1-recover? 0xde5b9eb9e7c5592930eb2e30a01369c36586d872082ed8181ee83d2a0ec20f04 0x8738487ebe69b93d8e51583be8eee50bb4213fc49c767d329632730cc193b873554428fc936ca3569afc15f1c9365f6591d6251a89fee9c9ac661116824d3a1301) ;; Returns (ok 0x03adb8de4bfb65db2cfd6120d55c6526ae9c52e675db7e47308636534ba7786110)
+(secp256k1-recover? 0xde5b9eb9e7c5592930eb2e30a01369c36586d872082ed8181ee83d2a0ec20f04
+ 0x8738487ebe69b93d8e51583be8eee50bb4213fc49c767d329632730cc193b873554428fc936ca3569afc15f1c9365f6591d6251a89fee9c9ac661116824d3a1301)
+ ;; Returns (ok 0x03adb8de4bfb65db2cfd6120d55c6526ae9c52e675db7e47308636534ba7786110)
 ```
 
-## secp256k1-verify​
+## secp256k1-verify
 
 Introduced in: **Clarity 1**
 
-**input:** `(buff 32), (buff 64) | (buff 65), (buff 33)`
+**Input:** `(buff 32), (buff 64) | (buff 65), (buff 33)`
 
-**output:** `bool`
+**Output:** `bool`
 
-**signature:** `(secp256k1-verify message-hash signature public-key)`
+**Signature:** `(secp256k1-verify message-hash signature public-key)`
 
-**description:**
+**Description:**
 
-The `secp256k1-verify` function verifies that the provided signature of the message-hash was signed with the private key that generated the public key. The `message-hash` is the `sha256` of the message. The signature includes 64 bytes plus an optional additional recovery id (00..03) for a total of 64 or 65 bytes.
+The `secp256k1-verify` function verifies that the provided signature of the message-hash
+was signed with the private key that generated the public key.
+The `message-hash` is the `sha256` of the message.
+The signature includes 64 bytes plus an optional additional recovery id (00..03) for a total of 64 or 65 bytes.
 
-**example:**
+**Example:**
 
 ```
-(secp256k1-verify 0xde5b9eb9e7c5592930eb2e30a01369c36586d872082ed8181ee83d2a0ec20f04 0x8738487ebe69b93d8e51583be8eee50bb4213fc49c767d329632730cc193b873554428fc936ca3569afc15f1c9365f6591d6251a89fee9c9ac661116824d3a1301 0x03adb8de4bfb65db2cfd6120d55c6526ae9c52e675db7e47308636534ba7786110) ;; Returns true
-(secp256k1-verify 0xde5b9eb9e7c5592930eb2e30a01369c36586d872082ed8181ee83d2a0ec20f04 0x8738487ebe69b93d8e51583be8eee50bb4213fc49c767d329632730cc193b873554428fc936ca3569afc15f1c9365f6591d6251a89fee9c9ac661116824d3a13 0x03adb8de4bfb65db2cfd6120d55c6526ae9c52e675db7e47308636534ba7786110) ;; Returns true
-(secp256k1-verify 0x0000000000000000000000000000000000000000000000000000000000000000 0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 0x03adb8de4bfb65db2cfd6120d55c6526ae9c52e675db7e47308636534ba7786110) ;; Returns false
+(secp256k1-verify 0xde5b9eb9e7c5592930eb2e30a01369c36586d872082ed8181ee83d2a0ec20f04
+ 0x8738487ebe69b93d8e51583be8eee50bb4213fc49c767d329632730cc193b873554428fc936ca3569afc15f1c9365f6591d6251a89fee9c9ac661116824d3a1301
+ 0x03adb8de4bfb65db2cfd6120d55c6526ae9c52e675db7e47308636534ba7786110) ;; Returns true
+(secp256k1-verify 0xde5b9eb9e7c5592930eb2e30a01369c36586d872082ed8181ee83d2a0ec20f04
+ 0x8738487ebe69b93d8e51583be8eee50bb4213fc49c767d329632730cc193b873554428fc936ca3569afc15f1c9365f6591d6251a89fee9c9ac661116824d3a13
+ 0x03adb8de4bfb65db2cfd6120d55c6526ae9c52e675db7e47308636534ba7786110) ;; Returns true
+(secp256k1-verify 0x0000000000000000000000000000000000000000000000000000000000000000
+ 0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+ 0x03adb8de4bfb65db2cfd6120d55c6526ae9c52e675db7e47308636534ba7786110) ;; Returns false
 ```
 
-## sha256​
+## sha256
 
 Introduced in: **Clarity 1**
 
-**input:** `buff|uint|int`
+**Input:** `buff|uint|int`
 
-**output:** `(buff 32)`
+**Output:** `(buff 32)`
 
-**signature:** `(sha256 value)`
+**Signature:** `(sha256 value)`
 
-**description:**
+**Description:**
 
-The `sha256` function computes `SHA256(x)` of the inputted value. If an integer (128 bit) is supplied the hash is computed over the little-endian representation of the integer.
+The `sha256` function computes `SHA256(x)` of the inputted value.
+If an integer (128 bit) is supplied the hash is computed over the little-endian representation of the
+integer.
 
-**example:**
+**Example:**
 
 ```
 (sha256 0) ;; Returns 0x374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb
 ```
 
-## sha512​
+## sha512
 
 Introduced in: **Clarity 1**
 
-**input:** `buff|uint|int`
+**Input:** `buff|uint|int`
 
-**output:** `(buff 64)`
+**Output:** `(buff 64)`
 
-**signature:** `(sha512 value)`
+**Signature:** `(sha512 value)`
 
-**description:**
+**Description:**
 
-The `sha512` function computes `SHA512(x)` of the inputted value. If an integer (128 bit) is supplied the hash is computed over the little-endian representation of the integer.
+The `sha512` function computes `SHA512(x)` of the inputted value.
+If an integer (128 bit) is supplied the hash is computed over the little-endian representation of the
+integer.
 
-**example:**
+**Example:**
 
 ```
 (sha512 1) ;; Returns 0x6fcee9a7b7a7b821d241c03c82377928bc6882e7a08c78a4221199bfa220cdc55212273018ee613317c8293bb8d1ce08d1e017508e94e06ab85a734c99c7cc34
 ```
 
-## sha512/256​
+## sha512/256
 
 Introduced in: **Clarity 1**
 
-**input:** `buff|uint|int`
+**Input:** `buff|uint|int`
 
-**output:** `(buff 32)`
+**Output:** `(buff 32)`
 
-**signature:** `(sha512/256 value)`
+**Signature:** `(sha512/256 value)`
 
-**description:**
+**Description:**
 
-The `sha512/256` function computes `SHA512/256(x)` (the SHA512 algorithm with the 512/256 initialization vector, truncated to 256 bits) of the inputted value. If an integer (128 bit) is supplied the hash is computed over the little-endian representation of the integer.
+The `sha512/256` function computes `SHA512/256(x)` (the SHA512 algorithm with the 512/256 initialization vector, truncated
+to 256 bits) of the inputted value.
+If an integer (128 bit) is supplied the hash is computed over the little-endian representation of the
+integer.
 
-**example:**
+**Example:**
 
 ```
 (sha512/256 1) ;; Returns 0x515a7e92e7c60522db968d81ff70b80818fc17aeabbec36baf0dda2812e94a86
 ```
 
-## slice?​
+## slice?
 
 Introduced in: **Clarity 2**
 
-**input:** `sequence_A, uint, uint`
+**Input:** `sequence_A, uint, uint`
 
-**output:** `(optional sequence_A)`
+**Output:** `(optional sequence_A)`
 
-**signature:** `(slice? sequence left-position right-position)`
+**Signature:** `(slice? sequence left-position right-position)`
 
-**description:**
+**Description:**
 
-The `slice?` function attempts to return a sub-sequence of that starts at `left-position` (inclusive), and ends at `right-position` (non-inclusive). If `left_position`==`right_position`, the function returns an empty sequence. If either `left_position` or `right_position` are out of bounds OR if `right_position` is less than `left_position`, the function returns `none`.
+The `slice?` function attempts to return a sub-sequence of that starts at `left-position` (inclusive), and
+ends at `right-position` (non-inclusive).
+If `left_position`==`right_position`, the function returns an empty sequence.
+If either `left_position` or `right_position` are out of bounds OR if `right_position` is less than
+`left_position`, the function returns `none`.
 
-**example:**
+**Example:**
 
 ```
 (slice? "blockstack" u5 u10) ;; Returns (some "stack")
@@ -2445,43 +2823,44 @@ The `slice?` function attempts to return a sub-sequence of that starts at `left-
 (slice? "abcd" u3 u1) ;; Returns none
 ```
 
-## some​
+## some
 
 Introduced in: **Clarity 1**
 
-**input:** `A`
+**Input:** `A`
 
-**output:** `(optional A)`
+**Output:** `(optional A)`
 
-**signature:** `(some value)`
+**Signature:** `(some value)`
 
-**description:**
+**Description:**
 
 The `some` function constructs a `optional` type from the input value.
 
-**example:**
+**Example:**
 
 ```
 (some 1) ;; Returns (some 1)
 (is-none (some 2)) ;; Returns false
 ```
 
-## sqrti​
+## sqrti
 
 Introduced in: **Clarity 1**
 
-**input:** `int | uint`
+**Input:** `int | uint`
 
-**output:** `int | uint`
+**Output:** `int | uint`
 
-**signature:** `(sqrti n)`
+**Signature:** `(sqrti n)`
 
-**description:**
+**Description:**
 
-Returns the largest integer that is less than or equal to the square root of `n`.\
+Returns the largest integer that is less than or equal to the square root of `n`.  
 Fails on a negative numbers.
 
-**example:**
+
+**Example:**
 
 ```
 (sqrti u11) ;; Returns u3
@@ -2490,23 +2869,25 @@ Fails on a negative numbers.
 (sqrti 0) ;; Returns 0
 ```
 
-## string-to-int?​
+## string-to-int?
 
 Introduced in: **Clarity 2**
 
-**input:** `(string-ascii 1048576) | (string-utf8 262144)`
+**Input:** `(string-ascii 1048576) | (string-utf8 262144)`
 
-**output:** `(optional int)`
+**Output:** `(optional int)`
 
-**signature:** `(string-to-int? (string-ascii|string-utf8))`
+**Signature:** `(string-to-int? (string-ascii|string-utf8))`
 
-**description:**
+**Description:**
 
-Converts a string, either `string-ascii` or `string-utf8`, to an optional-wrapped signed integer. If the input string does not represent a valid integer, then the function returns `none`. Otherwise it returns an integer wrapped in `some`.
+Converts a string, either `string-ascii` or `string-utf8`, to an optional-wrapped signed integer.
+If the input string does not represent a valid integer, then the function returns `none`. Otherwise it returns
+an integer wrapped in `some`.
 
 Note: This function is only available starting with Stacks 2.1.
 
-**example:**
+**Example:**
 
 ```
 (string-to-int? "1") ;; Returns (some 1)
@@ -2514,23 +2895,25 @@ Note: This function is only available starting with Stacks 2.1.
 (string-to-int? "a") ;; Returns none
 ```
 
-## string-to-uint?​
+## string-to-uint?
 
 Introduced in: **Clarity 2**
 
-**input:** `(string-ascii 1048576) | (string-utf8 262144)`
+**Input:** `(string-ascii 1048576) | (string-utf8 262144)`
 
-**output:** `(optional uint)`
+**Output:** `(optional uint)`
 
-**signature:** `(string-to-uint? (string-ascii|string-utf8))`
+**Signature:** `(string-to-uint? (string-ascii|string-utf8))`
 
-**description:**
+**Description:**
 
-Converts a string, either `string-ascii` or `string-utf8`, to an optional-wrapped unsigned integer. If the input string does not represent a valid integer, then the function returns `none`. Otherwise it returns an unsigned integer wrapped in `some`.
+Converts a string, either `string-ascii` or `string-utf8`, to an optional-wrapped unsigned integer.
+If the input string does not represent a valid integer, then the function returns `none`. Otherwise it returns
+an unsigned integer wrapped in `some`.
 
 Note: This function is only available starting with Stacks 2.1.
 
-**example:**
+**Example:**
 
 ```
 (string-to-uint? "1") ;; Returns (some u1)
@@ -2538,142 +2921,177 @@ Note: This function is only available starting with Stacks 2.1.
 (string-to-uint? "a") ;; Returns none
 ```
 
-## stx-account​
+## stx-account
 
 Introduced in: **Clarity 2**
 
-**input:** `principal`
+**Input:** `principal`
 
-**output:** `(tuple (locked uint) (unlock-height uint) (unlocked uint))`
+**Output:** `(tuple (locked uint) (unlock-height uint) (unlocked uint))`
 
-**signature:** `(stx-account owner)`
+**Signature:** `(stx-account owner)`
 
-**description:**
+**Description:**
 
 `stx-account` is used to query the STX account of the `owner` principal.
 
-This function returns a tuple with the canonical account representation for an STX account. This includes the current amount of unlocked STX, the current amount of locked STX, and the unlock height for any locked STX, all denominated in microstacks.
+This function returns a tuple with the canonical account representation for an STX account.
+This includes the current amount of unlocked STX, the current amount of locked STX, and the
+unlock height for any locked STX, all denominated in microstacks.
 
-**example:**
+
+**Example:**
 
 ```
 (stx-account 'SZ2J6ZY48GV1EZ5V2V5RB9MP66SW86PYKKQ9H6DPR) ;; Returns (tuple (locked u0) (unlock-height u0) (unlocked u0))
 (stx-account (as-contract tx-sender)) ;; Returns (tuple (locked u0) (unlock-height u0) (unlocked u1000))
 ```
 
-## stx-burn?​
+## stx-burn?
 
 Introduced in: **Clarity 1**
 
-**input:** `uint, principal`
+**Input:** `uint, principal`
 
-**output:** `(response bool uint)`
+**Output:** `(response bool uint)`
 
-**signature:** `(stx-burn? amount sender)`
+**Signature:** `(stx-burn? amount sender)`
 
-**description:**
+**Description:**
 
-`stx-burn?` decreases the `sender` principal's STX holdings by `amount`, specified in microstacks, by destroying the STX. The `sender` principal _must_ be equal to the current context's `tx-sender`.
+`stx-burn?` decreases the `sender` principal's STX holdings by `amount`,
+specified in microstacks, by destroying the STX. The `sender` principal _must_ be equal to the current
+context's `tx-sender`.
 
-This function returns (ok true) if the transfer is successful. In the event of an unsuccessful transfer it returns one of the following error codes:
+This function returns (ok true) if the burn is successful. In the event of an unsuccessful burn it returns
+one of the following error codes:
 
-`(err u1)` -- `sender` does not have enough balance to transfer `(err u3)` -- amount to send is non-positive `(err u4)` -- the `sender` principal is not the current `tx-sender`
+* `(err u1)` -- `sender` does not have enough balance to burn
+* `(err u3)` -- amount to burn is non-positive
+* `(err u4)` -- the `sender` principal is not the current `tx-sender`
 
-**example:**
+
+**Example:**
 
 ```
-(as-contract  (stx-burn? u60 tx-sender)) ;; Returns (ok true)
-(as-contract  (stx-burn? u50 'SZ2J6ZY48GV1EZ5V2V5RB9MP66SW86PYKKQ9H6DPR)) ;; Returns (err u4)
+(as-contract
+  (stx-burn? u60 tx-sender)) ;; Returns (ok true)
+(as-contract
+  (stx-burn? u50 'SZ2J6ZY48GV1EZ5V2V5RB9MP66SW86PYKKQ9H6DPR)) ;; Returns (err u4)
 ```
 
-## stx-get-balance​
+## stx-get-balance
 
 Introduced in: **Clarity 1**
 
-**input:** `principal`
+**Input:** `principal`
 
-**output:** `uint`
+**Output:** `uint`
 
-**signature:** `(stx-get-balance owner)`
+**Signature:** `(stx-get-balance owner)`
 
-**description:**
+**Description:**
 
 `stx-get-balance` is used to query the STX balance of the `owner` principal.
 
-This function returns the STX balance, in microstacks (1 STX = 1,000,000 microstacks), of the `owner` principal. In the event that the `owner` principal isn't materialized, it returns 0.
+This function returns the (unlocked) STX balance, in microstacks (1 STX = 1,000,000 microstacks), of the
+`owner` principal. The result is the same as `(get unlocked (stx-account user))`. 
+In the event that the `owner` principal isn't materialized, it returns 0.
 
-**example:**
+
+**Example:**
 
 ```
 (stx-get-balance 'SZ2J6ZY48GV1EZ5V2V5RB9MP66SW86PYKKQ9H6DPR) ;; Returns u0
 (stx-get-balance (as-contract tx-sender)) ;; Returns u1000
 ```
 
-## stx-transfer-memo?​
+## stx-transfer-memo?
 
 Introduced in: **Clarity 2**
 
-**input:** `uint, principal, principal, buff`
+**Input:** `uint, principal, principal, buff`
 
-**output:** `(response bool uint)`
+**Output:** `(response bool uint)`
 
-**signature:** `(stx-transfer-memo? amount sender recipient memo)`
+**Signature:** `(stx-transfer-memo? amount sender recipient memo)`
 
-**description:**
+**Description:**
 
-`stx-transfer-memo?` is similar to `stx-transfer?`, except that it adds a `memo` field.
+`stx-transfer-memo?` is similar to `stx-transfer?`, except that it adds a `memo` field. 
 
 This function returns (ok true) if the transfer is successful, or, on an error, returns the same codes as `stx-transfer?`.
 
-**example:**
+
+**Example:**
 
 ```
-(as-contract  (stx-transfer-memo? u60 tx-sender 'SZ2J6ZY48GV1EZ5V2V5RB9MP66SW86PYKKQ9H6DPR 0x010203)) ;; Returns (ok true)
+(as-contract
+  (stx-transfer-memo? u60 tx-sender 'SZ2J6ZY48GV1EZ5V2V5RB9MP66SW86PYKKQ9H6DPR 0x010203)) ;; Returns (ok true)
 ```
 
-## stx-transfer?​
+## stx-transfer?
 
 Introduced in: **Clarity 1**
 
-**input:** `uint, principal, principal`
+**Input:** `uint, principal, principal, buff`
 
-**output:** `(response bool uint)`
+**Output:** `(response bool uint)`
 
-**signature:** `(stx-transfer? amount sender recipient)`
+**Signature:** `(stx-transfer? amount sender recipient)`
 
-**description:**
+**Description:**
 
-`stx-transfer?` is used to increase the STX balance for the `recipient` principal by debiting the `sender` principal by `amount`, specified in microstacks. The `sender` principal _must_ be equal to the current context's `tx-sender`.
+`stx-transfer?` is used to increase the STX balance for the `recipient` principal
+by debiting the `sender` principal by `amount`, specified in microstacks. The `sender` principal
+ _must_ be equal to the current context's `tx-sender`.
 
-This function returns (ok true) if the transfer is successful. In the event of an unsuccessful transfer it returns one of the following error codes:
+This function returns (ok true) if the transfer is successful. In the event of an unsuccessful transfer it returns
+one of the following error codes:
 
-`(err u1)` -- `sender` does not have enough balance to transfer `(err u2)` -- `sender` and `recipient` are the same principal `(err u3)` -- amount to send is non-positive `(err u4)` -- the `sender` principal is not the current `tx-sender`
+* `(err u1)` -- `sender` does not have enough balance to transfer
+* `(err u2)` -- `sender` and `recipient` are the same principal
+* `(err u3)` -- amount to send is non-positive
+* `(err u4)` -- the `sender` principal is not the current `tx-sender`
 
-**example:**
+
+**Example:**
 
 ```
-(as-contract  (stx-transfer? u60 tx-sender 'SZ2J6ZY48GV1EZ5V2V5RB9MP66SW86PYKKQ9H6DPR)) ;; Returns (ok true)
-(as-contract  (stx-transfer? u60 tx-sender 'SZ2J6ZY48GV1EZ5V2V5RB9MP66SW86PYKKQ9H6DPR)) ;; Returns (ok true)
-(as-contract  (stx-transfer? u50 'SZ2J6ZY48GV1EZ5V2V5RB9MP66SW86PYKKQ9H6DPR tx-sender)) ;; Returns (err u4)
+(as-contract
+  (stx-transfer? u60 tx-sender 'SZ2J6ZY48GV1EZ5V2V5RB9MP66SW86PYKKQ9H6DPR)) ;; Returns (ok true)
+(as-contract
+  (stx-transfer? u60 tx-sender 'SZ2J6ZY48GV1EZ5V2V5RB9MP66SW86PYKKQ9H6DPR)) ;; Returns (ok true)
+(as-contract
+  (stx-transfer? u50 'SZ2J6ZY48GV1EZ5V2V5RB9MP66SW86PYKKQ9H6DPR tx-sender)) ;; Returns (err u4)
 ```
 
-## to-consensus-buff?​
+## to-consensus-buff?
 
 Introduced in: **Clarity 2**
 
-**input:** `any`
+**Input:** `any`
 
-**output:** `(optional buff)`
+**Output:** `(optional buff)`
 
-**signature:** `(to-consensus-buff? value)`
+**Signature:** `(to-consensus-buff? value)`
 
-**description:**
+**Description:**
 
-`to-consensus-buff?` is a special function that will serialize any Clarity value into a buffer, using the SIP-005 serialization of the Clarity value. Not all values can be serialized: some value's consensus serialization is too large to fit in a Clarity buffer (this is because of the type prefix in the consensus serialization).
+`to-consensus-buff?` is a special function that will serialize any
+Clarity value into a buffer, using the SIP-005 serialization of the
+Clarity value. Not all values can be serialized: some value's
+consensus serialization is too large to fit in a Clarity buffer (this
+is because of the type prefix in the consensus serialization).
 
-If the value cannot fit as serialized into the maximum buffer size, this returns `none`, otherwise, it will be `(some consensus-serialized-buffer)`. During type checking, the analyzed type of the result of this method will be the maximum possible consensus buffer length based on the inferred type of the supplied value.
+If the value cannot fit as serialized into the maximum buffer size,
+this returns `none`, otherwise, it will be
+`(some consensus-serialized-buffer)`. During type checking, the
+analyzed type of the result of this method will be the maximum possible
+consensus buffer length based on the inferred type of the supplied value.
 
-**example:**
+
+**Example:**
 
 ```
 (to-consensus-buff? 1) ;; Returns (some 0x0000000000000000000000000000000001)
@@ -2685,41 +3103,41 @@ If the value cannot fit as serialized into the maximum buffer size, this returns
 (to-consensus-buff? { abc: 3, def: 4 }) ;; Returns (some 0x0c00000002036162630000000000000000000000000000000003036465660000000000000000000000000000000004)
 ```
 
-## to-int​
+## to-int
 
 Introduced in: **Clarity 1**
 
-**input:** `uint`
+**Input:** `uint`
 
-**output:** `int`
+**Output:** `int`
 
-**signature:** `(to-int u)`
+**Signature:** `(to-int u)`
 
-**description:**
+**Description:**
 
 Tries to convert the `uint` argument to an `int`. Will cause a runtime error and abort if the supplied argument is >= `pow(2, 127)`
 
-**example:**
+**Example:**
 
 ```
 (to-int u238) ;; Returns 238
 ```
 
-## to-uint​
+## to-uint
 
 Introduced in: **Clarity 1**
 
-**input:** `int`
+**Input:** `int`
 
-**output:** `uint`
+**Output:** `uint`
 
-**signature:** `(to-uint i)`
+**Signature:** `(to-uint i)`
 
-**description:**
+**Description:**
 
 Tries to convert the `int` argument to a `uint`. Will cause a runtime error and abort if the supplied argument is negative.
 
-**example:**
+**Example:**
 
 ```
 (to-uint 238) ;; Returns u238
@@ -2729,78 +3147,89 @@ Tries to convert the `int` argument to a `uint`. Will cause a runtime error and 
 
 Introduced in: **Clarity 1**
 
-**input:** `(optional A) | (response A B)`
+**Input:** `(optional A) | (response A B)`
 
-**output:** `A`
+**Output:** `A`
 
-**signature:** `(try! option-input)`
+**Signature:** `(try! option-input)`
 
-**description:**
+**Description:**
 
-The `try!` function attempts to 'unpack' the first argument: if the argument is an option type, and the argument is a `(some ...)` option, `try!` returns the inner value of the option. If the argument is a response type, and the argument is an `(ok ...)` response, `try!` returns the inner value of the `ok`. If the supplied argument is either an `(err ...)` or a `none` value, `try!` _returns_ either `none` or the `(err ...)` value from the current function and exits the current control-flow.
+The `try!` function attempts to 'unpack' the first argument: if the argument is
+an option type, and the argument is a `(some ...)` option, `try!` returns the inner value of the
+option. If the argument is a response type, and the argument is an `(ok ...)` response, `try!` returns
+ the inner value of the `ok`. If the supplied argument is either an `(err ...)` or a `none` value,
+`try!` _returns_ either `none` or the `(err ...)` value from the current function and exits the current control-flow.
 
-**example:**
+**Example:**
 
 ```
 (define-map names-map { name: (string-ascii 12) } { id: int })
 (map-set names-map { name: "blockstack" } { id: 1337 })
 (try! (map-get? names-map { name: "blockstack" })) ;; Returns (tuple (id 1337))
-(define-private (checked-even (x int))  
-  (if (is-eq (mod x 2) 0)      
-    (ok x)      
-    (err false)))
-(define-private (double-if-even (x int))  
+(define-private (checked-even (x int))
+  (if (is-eq (mod x 2) 0)
+      (ok x)
+      (err false)))
+(define-private (double-if-even (x int))
   (ok (* 2 (try! (checked-even x)))))
 (double-if-even 10) ;; Returns (ok 20)
 (double-if-even 3) ;; Returns (err false)
 ```
 
-## tuple​
+## tuple
 
 Introduced in: **Clarity 1**
 
-**input:** `(key-name A), (key-name-2 B), ...`
+**Input:** `(key-name A), (key-name-2 B), ...`
 
-**output:** `(tuple (key-name A) (key-name-2 B) ...)`
+**Output:** `(tuple (key-name A) (key-name-2 B) ...)`
 
-**signature:** `(tuple (key0 expr0) (key1 expr1) ...)`
+**Signature:** `(tuple (key0 expr0) (key1 expr1) ...)`
 
-**description:**
+**Description:**
 
-The `tuple` special form constructs a typed tuple from the supplied key and expression pairs. A `get` function can use typed tuples as input to select specific values from a given tuple. Key names may not appear multiple times in the same tuple definition. Supplied expressions are evaluated and associated with the expressions' paired key name.
+The `tuple` special form constructs a typed tuple from the supplied key and expression pairs.
+A `get` function can use typed tuples as input to select specific values from a given tuple.
+Key names may not appear multiple times in the same tuple definition. Supplied expressions are evaluated and
+associated with the expressions' paired key name.
 
 There is a shorthand using curly brackets of the form {key0: expr0, key1: expr, ...}
 
-**example:**
+**Example:**
 
 ```
-(tuple (name "blockstack") 
-(id 1337)) ;; using tuple    
-{name: "blockstack", id: 1337} ;; using curly brackets
+(tuple (name "blockstack") (id 1337)) ;; using tuple
+    {name: "blockstack", id: 1337} ;; using curly brackets
 ```
 
 ## unwrap!
 
 Introduced in: **Clarity 1**
 
-**input:** `(optional A) | (response A B), C`
+**Input:** `(optional A) | (response A B), C`
 
-**output:** `A`
+**Output:** `A`
 
-**signature:** `(unwrap! option-input thrown-value)`
+**Signature:** `(unwrap! option-input thrown-value)`
 
-**description:**
+**Description:**
 
-The `unwrap!` function attempts to 'unpack' the first argument: if the argument is an option type, and the argument is a `(some ...)` option, `unwrap!` returns the inner value of the option. If the argument is a response type, and the argument is an `(ok ...)` response, `unwrap!` returns the inner value of the `ok`. If the supplied argument is either an `(err ...)` or a `(none)` value, `unwrap!` _returns_ `thrown-value` from the current function and exits the current control-flow.
+The `unwrap!` function attempts to 'unpack' the first argument: if the argument is
+an option type, and the argument is a `(some ...)` option, `unwrap!` returns the inner value of the
+option. If the argument is a response type, and the argument is an `(ok ...)` response, `unwrap!` returns
+ the inner value of the `ok`. If the supplied argument is either an `(err ...)` or a `none` value,
+`unwrap!` _returns_ `thrown-value` from the current function and exits the current control-flow.
 
-**example:**
+**Example:**
 
 ```
 (define-map names-map { name: (string-ascii 12) } { id: int })
 (map-set names-map { name: "blockstack" } { id: 1337 })
-(define-private (get-name-or-err (name (string-ascii 12)))  
-  (let ( (raw-name (unwrap! (map-get? names-map { name: name }) (err 1))))       
-  (ok raw-name)))
+(define-private (get-name-or-err (name (string-ascii 12)))
+  (let ((raw-name (unwrap! (map-get? names-map { name: name }) (err 1))))
+       (ok raw-name)))
+
 (get-name-or-err "blockstack") ;; Returns (ok (tuple (id 1337)))
 (get-name-or-err "non-existant") ;; Returns (err 1)
 ```
@@ -2809,58 +3238,68 @@ The `unwrap!` function attempts to 'unpack' the first argument: if the argument 
 
 Introduced in: **Clarity 1**
 
-**input:** `(response A B), C`
+**Input:** `(response A B), C`
 
-**output:** `B`
+**Output:** `B`
 
-**signature:** `(unwrap-err! response-input thrown-value)`
+**Signature:** `(unwrap-err! response-input thrown-value)`
 
-**description:**
+**Description:**
 
-The `unwrap-err!` function attempts to 'unpack' the first argument: if the argument is an `(err ...)` response, `unwrap-err!` returns the inner value of the `err`. If the supplied argument is an `(ok ...)` value, `unwrap-err!` _returns_ `thrown-value` from the current function and exits the current control-flow.
+The `unwrap-err!` function attempts to 'unpack' the first argument: if the argument
+is an `(err ...)` response, `unwrap-err!` returns the inner value of the `err`.
+If the supplied argument is an `(ok ...)` value,
+`unwrap-err!` _returns_ `thrown-value` from the current function and exits the current control-flow.
 
-**example:**
+**Example:**
 
 ```
 (unwrap-err! (err 1) false) ;; Returns 1
 ```
 
-## unwrap-err-panic​
+## unwrap-err-panic
 
 Introduced in: **Clarity 1**
 
-**input:** `(response A B)`
+**Input:** `(response A B)`
 
-**output:** `B`
+**Output:** `B`
 
-**signature:** `(unwrap-err-panic response-input)`
+**Signature:** `(unwrap-err-panic response-input)`
 
-**description:**
+**Description:**
 
-The `unwrap-err` function attempts to 'unpack' the first argument: if the argument is an `(err ...)` response, `unwrap` returns the inner value of the `err`. If the supplied argument is an `(ok ...)` value, `unwrap-err` throws a runtime error, aborting any further processing of the current transaction.
+The `unwrap-err` function attempts to 'unpack' the first argument: if the argument
+is an `(err ...)` response, `unwrap` returns the inner value of the `err`.
+If the supplied argument is an `(ok ...)` value,
+`unwrap-err` throws a runtime error, aborting any further processing of the current transaction.
 
-**example:**
+**Example:**
 
 ```
 (unwrap-err-panic (err 1)) ;; Returns 1
 (unwrap-err-panic (ok 1)) ;; Throws a runtime exception
 ```
 
-## unwrap-panic​
+## unwrap-panic
 
 Introduced in: **Clarity 1**
 
-**input:** `(optional A) | (response A B)`
+**Input:** `(optional A) | (response A B)`
 
-**output:** `A`
+**Output:** `A`
 
-**signature:** `(unwrap-panic option-input)`
+**Signature:** `(unwrap-panic option-input)`
 
-**description:**
+**Description:**
 
-The `unwrap` function attempts to 'unpack' its argument: if the argument is an option type, and the argument is a `(some ...)` option, this function returns the inner value of the option. If the argument is a response type, and the argument is an `(ok ...)` response, it returns the inner value of the `ok`. If the supplied argument is either an `(err ...)` or a `(none)` value, `unwrap` throws a runtime error, aborting any further processing of the current transaction.
+The `unwrap` function attempts to 'unpack' its argument: if the argument is
+an option type, and the argument is a `(some ...)` option, this function returns the inner value of the
+option. If the argument is a response type, and the argument is an `(ok ...)` response, it returns
+ the inner value of the `ok`. If the supplied argument is either an `(err ...)` or a `none` value,
+`unwrap` throws a runtime error, aborting any further processing of the current transaction.
 
-**example:**
+**Example:**
 
 ```
 (define-map names-map { name: (string-ascii 12) } { id: int })
@@ -2869,68 +3308,75 @@ The `unwrap` function attempts to 'unpack' its argument: if the argument is an o
 (unwrap-panic (map-get? names-map { name: "non-existant" })) ;; Throws a runtime exception
 ```
 
-## use-trait​
+## use-trait
 
 Introduced in: **Clarity 1**
 
-**input:** `VarName, TraitIdentifier`
+**Input:** `VarName, TraitIdentifier`
 
-**output:** `Not Applicable`
+**Output:** `Not Applicable`
 
-**signature:** `(use-trait trait-alias trait-identifier)`
+**Signature:** `(use-trait trait-alias trait-identifier)`
 
-**description:**
+**Description:**
 
-`use-trait` is used to bring a trait, defined in another contract, to the current contract. Subsequent references to an imported trait are signaled with the syntax `<trait-alias>`.
+`use-trait` is used to bring a trait, defined in another contract, to the current contract. Subsequent
+references to an imported trait are signaled with the syntax `<trait-alias>`.
 
-Traits import are defined with a name, used as an alias, and a trait identifier. Trait identifiers can either be using the sugared syntax (.token-a.token-trait), or be fully qualified ('SPAXYA5XS51713FDTQ8H94EJ4V579CXMTRNBZKSF.token-a.token-trait).
+Traits import are defined with a name, used as an alias, and a trait identifier. Trait identifiers can either be
+using the sugared syntax (.token-a.token-trait), or be fully qualified ('SPAXYA5XS51713FDTQ8H94EJ4V579CXMTRNBZKSF.token-a.token-trait).
 
-Like other kinds of definition statements, `use-trait` may only be used at the top level of a smart contract definition (i.e., you cannot put such a statement in the middle of a function body).
+Like other kinds of definition statements, `use-trait` may only be used at the top level of a smart contract
+definition (i.e., you cannot put such a statement in the middle of a function body).
+    
 
-**example:**
+**Example:**
 
 ```
 (use-trait token-a-trait 'SPAXYA5XS51713FDTQ8H94EJ4V579CXMTRNBZKSF.token-a.token-trait)
-(define-public (forward-get-balance (user principal) (contract <token-a-trait>))  
-  (begin (ok 1)))
+(define-public (forward-get-balance (user principal) (contract <token-a-trait>))
+  (begin
+    (ok 1)))
 ```
 
-## var-get​
+## var-get
 
 Introduced in: **Clarity 1**
 
-**input:** `VarName`
+**Input:** `VarName`
 
-**output:** `A`
+**Output:** `A`
 
-**signature:** `(var-get var-name)`
+**Signature:** `(var-get var-name)`
 
-**description:**
+**Description:**
 
-The `var-get` function looks up and returns an entry from a contract's data map. The value is looked up using `var-name`.
+The `var-get` function looks up and returns an entry from a contract's data map.
+The value is looked up using `var-name`.
 
-**example:**
+**Example:**
 
 ```
 (define-data-var cursor int 6)
 (var-get cursor) ;; Returns 6
 ```
 
-## var-set​
+## var-set
 
 Introduced in: **Clarity 1**
 
-**input:** `VarName, AnyType`
+**Input:** `VarName, AnyType`
 
-**output:** `bool`
+**Output:** `bool`
 
-**signature:** `(var-set var-name expr1)`
+**Signature:** `(var-set var-name expr1)`
 
-**description:**
+**Description:**
 
-The `var-set` function sets the value associated with the input variable to the inputted value. The function always returns `true`.
+The `var-set` function sets the value associated with the input variable to the
+inputted value. The function always returns `true`.
 
-**example:**
+**Example:**
 
 ```
 (define-data-var cursor int 6)
@@ -2939,23 +3385,24 @@ The `var-set` function sets the value associated with the input variable to the 
 (var-get cursor) ;; Returns 7
 ```
 
-## xor​
+## xor
 
 Introduced in: **Clarity 1**
 
-**input:** `int, int | uint, uint | string-ascii, string-ascii | string-utf8, string-utf8 | buff, buff`
+**Input:** `int, int | uint, uint | string-ascii, string-ascii | string-utf8, string-utf8 | buff, buff`
 
-**output:** `int | uint`
+**Output:** `int | uint`
 
-**signature:** `(xor i1 i2)`
+**Signature:** `(xor i1 i2)`
 
-**description:**
+**Description:**
 
 Returns the result of bitwise exclusive or'ing `i1` with `i2`.
 
-**example:**
+**Example:**
 
 ```
 (xor 1 2) ;; Returns 3
 (xor 120 280) ;; Returns 352
 ```
+
